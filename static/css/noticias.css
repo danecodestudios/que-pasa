@@ -1,0 +1,92 @@
+.wp-block-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body p {
+    font-size: 1.2rem;
+    font-family: 'Merriweather Sans';
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.8px;
+    color: black;
+    text-align: justify;
+}
+
+.card-body p em {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.card-body p strong {
+    font-size: 1.2rem;
+    font-family: 'Merriweather Sans';
+    font-weight: 800;
+}
+
+.has-drop-cap {
+    text-align: start;
+}
+
+.has-drop-cap:first-letter {
+    font-size: 3.5rem;
+}
+
+.has-inline-color {
+    font-weight: 900;
+    text-align: start;
+}
+
+.wp-block-quote {
+    font-family: 'Merriweather Sans';
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+figcaption {
+    font-family: 'Merriweather Sans';
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+@media screen and (min-width: 240px) and (max-width: 575.98px) {
+    .card-body p {
+        font-size: 1.1rem;
+        font-family: 'Merriweather Sans';
+        font-weight: 400;
+        margin: 40px 0px;
+        letter-spacing: 0.8px;
+        color: black;
+        text-align: justify;
+        text-justify: distribute;
+        text-align-last: left;
+    }
+    .card-body strong {
+        font-size: 1.1rem;
+        font-family: 'Merriweather Sans';
+        font-weight: 600;
+    }
+    .has-drop-cap {
+        text-align: start;
+    }
+    .has-drop-cap:first-letter {
+        font-size: 2rem;
+        font-weight: 800;
+        position: absolute;
+        left: -10px;
+    }
+    .has-inline-color {
+        font-weight: 900;
+        text-align: start;
+    }
+    .wp-block-quote {
+        font-family: 'Merriweather Sans';
+        font-size: 1.2rem;
+        font-weight: lighter;
+    }
+    figcaption {
+        font-family: 'Merriweather Sans';
+        font-weight: 200;
+        font-size: 0.8rem;
+    }
+}
