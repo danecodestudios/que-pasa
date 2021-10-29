@@ -37,7 +37,7 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-import getSiteMeta from "@/utils/getSiteMeta";
+
 
 require('moment/locale/es-mx')
 
