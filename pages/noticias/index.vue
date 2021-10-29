@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-tabs background-color="purple darken-4 text-white" center-active dark>
+      <v-tabs background-color="fondo-morado text-white" center-active dark>
         <v-tab v-for="post in categorias" :key="post">{{ post.name }}</v-tab>
       </v-tabs>
     </v-card>

@@ -10,7 +10,7 @@
         <div class="card-footer">
           <p class="card-text">
             <small class="text-fecha"
-              >Publicado Hace : <v-icon>mdi-clock-outline</v-icon> {{ hyf }}
+              >Publicado Hace : <v-icon  style="color:white;">mdi-clock-outline</v-icon> {{ hyf }}
             </small>
           </p>
         </div>
