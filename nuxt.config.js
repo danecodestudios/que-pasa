@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-import getSiteMeta from "./utils/getSiteMeta";
 const meta = getSiteMeta();
 
 export default {
