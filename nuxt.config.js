@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-const meta = getSiteMeta();
+
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -11,7 +11,7 @@ export default {
             lang: 'es',
         },
         meta: [
-            ...meta,
+
             { charset: "utf-8" },
             { name: "HandheldFriendly", content: "True" },
             { name: "viewport", content: "width=device-width, initial-scale=1" },

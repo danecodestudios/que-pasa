@@ -52,24 +52,13 @@ export default {
       moment: moment,
     }
   },
-  computed: {
-  meta() {
-    const metaData = {
-      type: "article",
-      title: this.title,
-      description: this.contenido,
-      url: `${this.$config.baseUrl}/noticias/${this.$route.params.slug}`,
-      mainImage: this.imagen,
-    };
-    return getSiteMeta(metaData);
-  }
-},
+
 
 head() {
   return {
     title: this.title,
     meta: [
-      ...this.meta,
+    
       {
         property: "article:published_time",
         content: this.posts.date,
