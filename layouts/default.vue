@@ -4,7 +4,7 @@
       :clipped-left="clipped"
       fixed
       app
-      class="purple darken-4 nav"
+      class=" fondo-morado-1"
       height="70px"
     >
       <div>
@@ -20,8 +20,8 @@
           icon
           @click.stop="sonido()"
         >
-          <v-icon v-if="!pausa" class="p-4 " size="45" >mdi-play-speed</v-icon>
-          <v-icon v-if="pausa" class="p-4" size="45">mdi-motion-pause-outline</v-icon>
+          <v-icon v-if="!pausa" class="p-4 " style="color:white;" size="45" >mdi-play-speed</v-icon>
+          <v-icon v-if="pausa" class="p-4"  style="color:white;" size="45">mdi-motion-pause-outline</v-icon>
         </v-btn>
       </div>
     </v-app-bar>
@@ -42,7 +42,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer class="purple darken-4" :absolute="!fixed" app>
+    <v-footer class="fondo-morado-2" :absolute="!fixed" app>
       <span>&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} QUE PASA NEWS || COLOMBIA </span>
     </v-footer>
   </v-app>
@@ -50,8 +50,16 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-.nav {
-  border-bottom: 2px solid greenyellow;
+.fondo-morado-1{
+ background-color: #360258 !important;
+ border-color: rgb(47, 255, 47) !important;
+ border-bottom: 4px solid rgb(47, 255, 47) ;
+}
+
+.fondo-morado-2{
+ background-color: #360258 !important;
+ border-color: rgb(47, 255, 47) !important;
+ border-top: 4px solid rgb(47, 255, 47) ;
 }
 
 .radio {
