@@ -1,44 +1,44 @@
 <template>
   <div>
+    <div class="imagen-caja">
+      <v-container>
+        <v-row>
+          <v-col class="md-4 col-mobile"> </v-col>
+          <img class="img_posts" :src="imagen" alt="" />
+          <v-col class="md-4 col-mobile"> </v-col>
+        </v-row>
+      </v-container>
+    </div>
 
-      <div class="imagen-caja">
-        <v-container>
-          <v-row>
-            <v-col class="md-4 col-mobile"> </v-col>
-            <img class="img_posts" :src="imagen" alt="" />
-            <v-col class="md-4 col-mobile"> </v-col>
-          </v-row>
-        </v-container>
-      </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3"></div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3"></div>
+        <div class="col-12 col-md-6">
+          <div class="container tarjeta">
+            <div class="card-head">
+              <div class="cat">{{ categoria }}</div>
+              <h1 class="titulo">{{ titulo }}</h1>
+            </div>
 
-          <div class="col-12 col-md-6">
-            <div class="container tarjeta">
-              <div class="card-head">
-                <div class="cat">{{ categoria }}</div>
-                <h1 class="titulo">{{ titulo }}</h1>
-              </div>
+            <hr style="color: black" />
 
-                    <hr style="color:black;">
-
-              <div class="card-body">
-                <div class="contenido" v-html="contenido"></div>
-              </div>
+            <div class="card-body">
+              <div class="contenido" v-html="contenido"></div>
             </div>
           </div>
-
-          <div class="col-12 col-md-3"></div>
         </div>
-      </div>
 
+        <div class="col-12 col-md-3"></div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import axios from 'axios'
 import moment from 'moment'
+import getSiteMeta from "@/utils/getSiteMeta";
+
 require('moment/locale/es-mx')
 
 export default {
@@ -52,21 +52,54 @@ export default {
       moment: moment,
     }
   },
+  computed: {
+  meta() {
+    const metaData = {
+      type: "article",
+      title: this.title,
+      description: this.contenido,
+      url: `${this.$config.baseUrl}/noticias/${this.$route.params.slug}`,
+      mainImage: this.imagen,
+    };
+    return getSiteMeta(metaData);
+  }
+},
 
-  head() {
-    return {
-      title: this.titulo,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Que Pasa news',
-        },
-      ],
-    }
-  },
+head() {
+  return {
+    title: this.title,
+    meta: [
+      ...this.meta,
+      {
+        property: "article:published_time",
+        content: this.posts.date,
+      },
+      {
+        property: "article:modified_time",
+        content: this.posts.date_gmt,
+      },
+      {
+        property: "article:tag",
+        content: this.posts.tags ? this.posts.tags.toString() : "",
+      },
+      { name: "twitter:label1", content: "Written by" },
+      { name: "twitter:data1", content: "Bob Ross" },
+      { name: "twitter:label2", content: "Filed under" },
+      {
+        name: "twitter:data2",
+        content: this.posts.tags ? this.posts.tags.toString() : "",
+      },
+    ],
+    link: [
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: `https://bobross.com/articles/${this.$route.params.slug}`,
+      },
+    ],
+  };
+},
 
-  computed: {},
 
   async mounted() {
     try {
@@ -99,13 +132,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import '@/static/css/bootstrap.css';
 
-
-
 /* ============================= */
 
-.row{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+.row {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .titulo {
@@ -114,7 +145,7 @@ export default {
   font-weight: 900;
   margin-bottom: 50px;
   padding-top: 60px;
-  text-align: justify;
+  text-align: unset;
   width: 100%;
   color: black;
 }
@@ -148,8 +179,6 @@ export default {
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
-  
-
   .col-mobile {
     display: none;
   }
@@ -200,7 +229,6 @@ export default {
   .titulo {
     padding: 1px 5px;
   }
-
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {

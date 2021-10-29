@@ -1,29 +1,47 @@
 import colors from 'vuetify/es5/util/colors'
+import getSiteMeta from "./utils/getSiteMeta";
+
+const meta = getSiteMeta();
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
+
         titleTemplate: '%s - ¿Que Pasa News?',
         title: 'que-pasa-forntd',
         htmlAttrs: {
-            lang: 'es'
+            lang: 'es',
         },
         meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
-            { name: 'format-detection', content: 'telephone=no' }
+            ...meta,
+            { charset: "utf-8" },
+            { name: "HandheldFriendly", content: "True" },
+            { name: "viewport", content: "width=device-width, initial-scale=1" },
+            { property: "og:site_name", content: "Que Pasa News" },
+            {
+                hid: "description",
+                name: "description",
+                content: "Platafforma Lider Digital De Colombia",
+            },
+            { property: "og:image:width", content: "740" },
+            { property: "og:image:height", content: "300" },
+            { name: "twitter:site", content: "@bobross" },
+            { name: "twitter:card", content: "summary_large_image" },
+            { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-        ]
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            {
+                hid: "canonical",
+                rel: "canonical",
+                href: process.env.BASE_URL,
+            },
+        ],
+
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [
-        '@/static/css/main.css',
-        '@/static/css/noticias.css',
-    ],
+    css: ['@/static/css/main.css', '@/static/css/noticias.css'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
@@ -59,12 +77,12 @@ export default {
                     info: colors.teal.lighten1,
                     warning: colors.amber.base,
                     error: colors.deepOrange.accent4,
-                    success: colors.green.accent3
-                }
-            }
-        }
+                    success: colors.green.accent3,
+                },
+            },
+        },
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {},
 }
