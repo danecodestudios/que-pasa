@@ -1,5 +1,10 @@
 <template>
   <div>
+
+    <v-container>
+      <Destacados />
+    </v-container>
+
     <v-card>
       <v-tabs background-color="fondo-morado text-white" center-active dark>
         <v-tab v-for="post in categorias" :key="post">{{ post.name }}</v-tab>
@@ -30,6 +35,7 @@
 
 <script>
 import Noticias from '@/components/Noticias.vue'
+import Destacados from '@/pages/destacados/index.vue'
 import axios from 'axios'
 import moment from 'moment'
 require('moment/locale/es-mx')
@@ -37,6 +43,7 @@ require('moment/locale/es-mx')
 export default {
   components: {
     Noticias,
+    Destacados
   },
 
   data() {
