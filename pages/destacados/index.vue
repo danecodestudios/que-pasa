@@ -185,7 +185,7 @@ export default {
       this.tituloDos = res.data[1].title.rendered
       this.tituloTres = res.data[2].title.rendered
 
-      console.log(this.destacados)
+     
       this.categorias = resCat.data
     } catch (error) {
       err = error

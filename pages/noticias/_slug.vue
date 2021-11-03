@@ -108,7 +108,6 @@ head() {
         `${'https://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`
       )
       this.categoria = resCategorias.data.name
-
       console.log(this.categoria)
     } catch (error) {}
   },

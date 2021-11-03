@@ -117,7 +117,8 @@
 
   .news-movie_contain{
     padding:0px !important ;
-    position: relative;
+    position: sticky;
+    z-index: inherit;
     top: -5px;    
   }
 
@@ -159,7 +160,6 @@ export default {
         'https://losmaster.xyz/wp-json/wp/v2/categories'
       )
       this.posts = res.data
-      console.log(this.posts)
       this.categorias = resCat.data
     } catch (error) {
       err = error
