@@ -106,11 +106,12 @@
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
   .v-toolbar__title {
-    padding-right: 5px;
+    
     font-size: 0.9rem;
     font-weight: 600;
-    padding: 18px 5px;
+    padding: 15px 3px;
     position: relative;
+    right: 5px;
     
   }
 
