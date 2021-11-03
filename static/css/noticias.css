@@ -3,6 +3,10 @@
     height: auto;
 }
 
+img {
+    width: 100%;
+}
+
 .card-body p {
     font-size: 1.2rem;
     font-family: 'Merriweather Sans';

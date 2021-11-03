@@ -140,6 +140,7 @@ head() {
 }
 .imagen-caja {
   margin-top: 25px;
+  
 }
 .tarjeta {
   background-color: rgb(255, 255, 255);
