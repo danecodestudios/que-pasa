@@ -46,6 +46,8 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <Videos />
   </div>
 </template>
 
@@ -132,6 +134,7 @@
 <script>
 import Noticias from '~/components/Noticia.vue'
 import Destacados from '@/pages/destacados/index.vue'
+import Videos from '@/pages/videos/index.vue'
 import axios from 'axios'
 import moment from 'moment'
 require('moment/locale/es-mx')
@@ -140,6 +143,7 @@ export default {
   components: {
     Noticias,
     Destacados,
+    Videos
   },
 
   data() {
