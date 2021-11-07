@@ -2,7 +2,7 @@
   <div>
     <v-container class="contenedor_videos">
       <h1>
-        NUESTROS VIDEOS. &nbsp;  &nbsp;  &nbsp;  &nbsp; RECUERDA SEGUIRNOS EN 
+        NUESTROS VIDEOS &nbsp;  &nbsp;  &nbsp;  &nbsp; RECUERDA SEGUIRNOS EN 
         <a
           style="color: red"
           href="https://www.youtube.com/channel/UCipRgwMVfuR3KOF8tqd_jpg"
@@ -11,6 +11,7 @@
           <v-icon style="color: red; font-size: 3rem">mdi-youtube</v-icon>
           YOUTUBE
           </a>
+          
       </h1>
       <v-row>
         <v-col
