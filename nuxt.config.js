@@ -5,28 +5,97 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
 
-        titleTemplate: '%s - ¿Que Pasa News?',
-        title: ' ',
+        titleTemplate: '%s ',
+        title: '¿Que Pasa News?',
         htmlAttrs: {
-            lang: 'es',
+            lang: 'es-co',
         },
-        meta: [
 
-            { charset: "utf-8" },
-            { name: "HandheldFriendly", content: "True" },
-            { name: "viewport", content: "width=device-width, initial-scale=1" },
-            { property: "og:site_name", content: "Que Pasa News" },
-            {
-                hid: "description",
-                name: "description",
-                content: "Plataforma Lider Digital De Colombia",
+
+
+
+
+        meta: [{
+                charset: 'utf-8'
             },
-            { property: "og:image:width", content: "100%" },
-            { property: "og:image:height", content: "300" },
-            { name: "twitter:site", content: "@bobross" },
-            { name: "twitter:card", content: "summary_large_image" },
-            { name: 'format-detection', content: 'telephone=no' },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo '
+            },
+
+            // Open Graph
+            {
+                hid: 'og:type',
+                property: 'og:type',
+                content: 'Aplicacion Web SSR'
+            },
+            {
+                hid: 'og:site_name',
+                property: 'og:site_name',
+                content: 'Que Pasa News  '
+            },
+            {
+                hid: 'og:title',
+                property: 'og:title',
+                content: '¿Que Pasa? News'
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+            },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: 'https://www.quepasanews.info/'
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+            },
+
+            // Twitter
+            {
+                hid: 'twitter:card',
+                name: 'twitter:card',
+                content: 'summary'
+            },
+            {
+                hid: 'twitter:site',
+                name: 'twitter:site',
+                content: '@quepasanews'
+            },
+            {
+                hid: 'twitter:url',
+                name: 'twitter:url',
+                content: 'https://www.quepasanews.info/'
+            },
+            {
+                hid: 'twitter:title',
+                name: 'twitter:title',
+                content: 'Que Pasa News | Plataforma Oficial'
+            },
+            {
+                hid: 'twitter:description',
+                name: 'twitter:description',
+                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+            },
+            {
+                hid: 'twitter:image',
+                name: 'twitter:image',
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+            }
         ],
+
+
+
+
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/que-pasa-logo.jpg' },
             {

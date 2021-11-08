@@ -57,51 +57,62 @@ export default {
     return { fetchedData }
   },
 
-  head() {
-    return {
-      title: this.fetchedData.title.rendered,
-      meta: [
-        {
-          property: 'og:img',
-          content: this.fetchedData.one_call.featured_list.source_url,
-        },
 
-          {
-          property: 'og:description',
-          content: this.fetchedData.excerpt.rendered,
-        },
-      ],
+      head () {
+        return {
+          title: this.fetchedData.title.rendered,
+          meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content: '¿Que Pasa? News .info | Ver Mas '
+            },
+            // Open Graph
+            { 
+              hid: 'og:url', 
+              property: 'og:url', 
+              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'og:title',
+              property: 'og:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'og:description',
+              property: 'og:description',
+              content: '¿Que Pasa? News .info | Ver Mas '
+            },
 
-      link: [
-        {
-          hid: 'canonical',
-          rel: 'canonical',
-          href: `https://bobross.com/articles/${this.$route.params.slug}`,
-        },
-      ],
-    }
-  },
+             {
+                hid: 'og:image',
+                property: 'og:image',
+                content: this.fetchedData.one_call.featured_list.source_url
+            },
 
-  async mounted() {
-    try {
-      // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
-      const url = 'https://losmaster.xyz/wp-json/wp/v2/posts?slug='
-      const res = await axios.get(`${url}${this.$route.params.slug}`)
-      this.posts = res.data
+            // Twitter
+            { 
+              hid: 'twitter:url', 
+              name: 'twitter:url', 
+              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'twitter:title',
+              name: 'twitter:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'twitter:description',
+              name: 'twitter:description',
+              content: '¿Que Pasa? News .info | Ver Mas  '
+            }
+          ],
+          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/${this.fetchedData.slug}` }]
+        }
+      }
 
-      // =======================================================================
-      this.imagen = res.data[0].one_call.featured_list.source_url
-      this.titulo = res.data[0].title.rendered
-      this.contenido = res.data[0].content.rendered
 
-      // ================= PETICION CATEGORIA  ==================================
-      let _id = res.data[0].categories[0]
-      const resCategorias = await axios.get(
-        `${'https://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`
-      )
-      this.categoria = resCategorias.data.name
-    } catch (error) {}
-  },
+
 }
 </script>
 
