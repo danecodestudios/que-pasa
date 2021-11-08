@@ -65,7 +65,7 @@ export default {
             {
               hid: 'description',
               name: 'description',
-              content: '¿Que Pasa? News .info | Ver Mas '
+              content: this.fetchedData.title.rendered
             },
             // Open Graph
               {
@@ -86,7 +86,7 @@ export default {
             {
               hid: 'og:description',
               property: 'og:description',
-              content: '¿Que Pasa? News .info | Ver Mas '
+              content: this.fetchedData.title.rendered
             },
 
              {
@@ -109,7 +109,7 @@ export default {
             {
               hid: 'twitter:description',
               name: 'twitter:description',
-              content: '¿Que Pasa? News .info | Ver Mas  '
+              content: this.fetchedData.title.rendered
             },
                {
                 hid: 'twitter:image',
