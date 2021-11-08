@@ -65,6 +65,11 @@ export default {
           property: 'og:img',
           content: this.fetchedData.one_call.featured_list.source_url,
         },
+
+          {
+          property: 'og:description',
+          content: this.fetchedData.excerpt.rendered,
+        },
       ],
 
       link: [
