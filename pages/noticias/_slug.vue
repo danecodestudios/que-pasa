@@ -53,7 +53,7 @@ export default {
       `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
-    console.log(fetchedData)
+
     return { fetchedData }
   },
 
@@ -68,6 +68,11 @@ export default {
               content: '¿Que Pasa? News .info | Ver Mas '
             },
             // Open Graph
+              {
+                hid: 'og:type',
+                property: 'og:type',
+                content: 'posts'
+            },
             { 
               hid: 'og:url', 
               property: 'og:url', 

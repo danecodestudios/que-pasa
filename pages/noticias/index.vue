@@ -7,8 +7,8 @@
         <marquee class="news-movie" behavior="" direction=""
           ><span
             class=""
-            v-for="(post) of posts"
-            :key="post.id "
+            v-for="(post, index) of posts"
+            :key="post.id + '_' + index"
             ><v-icon class="icon-circle">mdi-circle-double</v-icon>
             <NuxtLink :to="'/noticias/' + post.slug">
               {{ post.title.rendered }}</NuxtLink
@@ -52,22 +52,28 @@
 </template>
 
 <style scoped>
+
+
+
 /* ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ */
 
-.destacados-contain {
+.destacados-contain{
   margin-bottom: 30px;
   margin-top: 30px;
 }
 
-.noticias-contain_block1 {
+.noticias-contain_block1{
   margin: auto;
   margin-top: 20px;
+
 }
 
 /* ????????????????????????????? */
 .news-movie span {
   padding-left: 50px;
 }
+
+  
 
 .news-movie a {
   color: white;
@@ -102,19 +108,25 @@
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
   .v-toolbar__title {
+    
     font-size: 0.9rem;
     font-weight: 600;
     padding: 15px 3px;
     position: relative;
     right: 5px;
+    
   }
 
-  .news-movie_contain {
-    padding: 0px !important ;
+  .news-movie_contain{
+    padding:0px !important ;
     position: sticky;
     z-index: inherit;
-    top: -5px;
+    top: -5px;    
   }
+
+
+
+
 }
 </style>
 
@@ -131,7 +143,7 @@ export default {
   components: {
     Noticias,
     Destacados,
-    Videos,
+    Videos
   },
 
   data() {
@@ -153,8 +165,6 @@ export default {
       )
       this.posts = res.data
       this.categorias = resCat.data
-
- 
     } catch (error) {
       err = error
     }

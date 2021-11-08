@@ -4,7 +4,11 @@
       <v-container>
         <v-row>
           <v-col class="md-4 col-mobile"> </v-col>
-          <img class="img_posts" :src="imagen" alt="" />
+          <img
+            class="img_posts"
+            :src="fetchedData.one_call.featured_list.source_url"
+            alt=""
+          />
           <v-col class="md-4 col-mobile"> </v-col>
         </v-row>
       </v-container>
@@ -17,14 +21,17 @@
         <div class="col-12 col-md-6">
           <div class="container tarjeta">
             <div class="card-head">
-              <div class="cat">{{ categoria }}</div>
-              <h1 class="titulo">{{ titulo }}</h1>
+              <div class="cat">{{ fetchedData.one_call.categories_list[0].name }}</div>
+              <h1 class="titulo">{{ fetchedData.title.rendered }}</h1>
             </div>
 
             <hr style="color: black" />
 
             <div class="card-body">
-              <div class="contenido" v-html="contenido"></div>
+              <div
+                class="contenido"
+                v-html="fetchedData.content.rendered"
+              ></div>
             </div>
           </div>
         </div>
@@ -35,83 +42,87 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import moment from 'moment'
-
+// import axios from 'axios'
+// import moment from 'moment'
 
 require('moment/locale/es-mx')
 
 export default {
-  data() {
-    return {
-      posts: {},
-      imagen: '',
-      titulo: '',
-      contenido: '',
-      categoria: '',
-      moment: moment,
-    }
+  async asyncData({ params, $axios }) {
+    const res = await $axios.$get(
+      `https://losmaster.xyz/wp-json/wp/v2/destacados?slug=${params.slug}`
+    )
+    let fetchedData = res[0]
+
+    return { fetchedData }
   },
 
 
-head() {
-  return {
-    title: this.title,
-    meta: [
-    
-      {
-        property: "article:published_time",
-        content: this.posts.date,
-      },
-      {
-        property: "article:modified_time",
-        content: this.posts.date_gmt,
-      },
-      {
-        property: "article:tag",
-        content: this.posts.tags ? this.posts.tags.toString() : "",
-      },
-      { name: "twitter:label1", content: "Written by" },
-      { name: "twitter:data1", content: "Bob Ross" },
-      { name: "twitter:label2", content: "Filed under" },
-      {
-        name: "twitter:data2",
-        content: this.posts.tags ? this.posts.tags.toString() : "",
-      },
-    ],
-    link: [
-      {
-        hid: "canonical",
-        rel: "canonical",
-        href: `https://bobross.com/articles/${this.$route.params.slug}`,
-      },
-    ],
-  };
-},
+      head () {
+        return {
+          title: this.fetchedData.title.rendered,
+          meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content: '¿Que Pasa? News .info | Ver Mas '
+            },
+            // Open Graph
+              {
+                hid: 'og:type',
+                property: 'og:type',
+                content: 'posts'
+            },
+            { 
+              hid: 'og:url', 
+              property: 'og:url', 
+              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'og:title',
+              property: 'og:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'og:description',
+              property: 'og:description',
+              content: '¿Que Pasa? News .info | Ver Mas '
+            },
+
+             {
+                hid: 'og:image',
+                property: 'og:image',
+                content: this.fetchedData.one_call.featured_list.source_url
+            },
+
+            // Twitter
+            { 
+              hid: 'twitter:url', 
+              name: 'twitter:url', 
+              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'twitter:title',
+              name: 'twitter:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'twitter:description',
+              name: 'twitter:description',
+              content: '¿Que Pasa? News .info | Ver Mas  '
+            },
+               {
+                hid: 'twitter:image',
+                name: 'twitter:image',
+                content: this.fetchedData.one_call.featured_list.source_url
+            }
+          ],
+          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/${this.fetchedData.slug}` }]
+        }
+      }
 
 
-  async mounted() {
-    try {
-      // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
-      const url = 'https://losmaster.xyz/wp-json/wp/v2/destacados?slug='
-      const res = await axios.get(`${url}${this.$route.params.slug}`)
-      this.posts = res.data
 
-      // =======================================================================
-      this.imagen = res.data[0].one_call.featured_list.source_url
-      this.titulo = res.data[0].title.rendered
-      this.contenido = res.data[0].content.rendered
-
-      // ================= PETICION CATEGORIA  ==================================
-      let _id = res.data[0].categories[0]
-      const resCategorias = await axios.get(
-        `${'https://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`
-      )
-      this.categoria = resCategorias.data.name
-
-      console.log(this.categoria)
-    } catch (error) {}
-  },
 }
 </script>
 
