@@ -42,7 +42,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer class="fondo-morado-2 " style="color:white;" :absolute="!fixed" app>
+    <v-footer class="fondo-morado-2  " style="color:white; " :absolute="!fixed" app>
       <span>&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} QUE PASA NEWS || COLOMBIA </span>
     </v-footer>
   </v-app>

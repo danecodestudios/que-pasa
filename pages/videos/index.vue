@@ -24,7 +24,7 @@
             :src="` ${url}${video.id.videoId} `"
             title="Videos Que Pasa News"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            
             allowfullscreen
           ></iframe>
           <div class="titulo">

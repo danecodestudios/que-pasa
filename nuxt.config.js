@@ -6,7 +6,7 @@ export default {
     head: {
 
         titleTemplate: '%s - ¿Que Pasa News?',
-        title: 'que-pasa-forntd',
+        title: ' ',
         htmlAttrs: {
             lang: 'es',
         },
@@ -16,10 +16,11 @@ export default {
             { name: "HandheldFriendly", content: "True" },
             { name: "viewport", content: "width=device-width, initial-scale=1" },
             { property: "og:site_name", content: "Que Pasa News" },
+            { property: "og:img", content: "" },
             {
                 hid: "description",
                 name: "description",
-                content: "Platafforma Lider Digital De Colombia",
+                content: "Plataforma Lider Digital De Colombia",
             },
             { property: "og:image:width", content: "740" },
             { property: "og:image:height", content: "300" },
@@ -28,7 +29,7 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/que-pasa-logo.jpg' },
             {
                 hid: "canonical",
                 rel: "canonical",

@@ -4,7 +4,11 @@
       <v-container>
         <v-row>
           <v-col class="md-4 col-mobile"> </v-col>
-          <img class="img_posts" :src="imagen" alt="" />
+          <img
+            class="img_posts"
+            :src="fetchedData.one_call.featured_list.source_url"
+            alt=""
+          />
           <v-col class="md-4 col-mobile"> </v-col>
         </v-row>
       </v-container>
@@ -17,14 +21,17 @@
         <div class="col-12 col-md-6">
           <div class="container tarjeta">
             <div class="card-head">
-              <div class="cat">{{ categoria }}</div>
-              <h1 class="titulo">{{ titulo }}</h1>
+              <div class="cat">{{ fetchedData.one_call.categories_list[0].name }}</div>
+              <h1 class="titulo">{{ fetchedData.title.rendered }}</h1>
             </div>
 
             <hr style="color: black" />
 
             <div class="card-body">
-              <div class="contenido" v-html="contenido"></div>
+              <div
+                class="contenido"
+                v-html="fetchedData.content.rendered"
+              ></div>
             </div>
           </div>
         </div>
@@ -35,60 +42,40 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import moment from 'moment'
-
+// import axios from 'axios'
+// import moment from 'moment'
 
 require('moment/locale/es-mx')
 
 export default {
-  data() {
-    return {
-      posts: {},
-      imagen: '',
-      titulo: '',
-      contenido: '',
-      categoria: '',
-      moment: moment,
-    }
+  async asyncData({ params, $axios }) {
+    const res = await $axios.$get(
+      `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
+    )
+    let fetchedData = res[0]
+    console.log(fetchedData)
+    return { fetchedData }
   },
 
+  head() {
+    return {
+      title: this.fetchedData.title.rendered,
+      meta: [
+        {
+          property: 'og:img',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
+      ],
 
-head() {
-  return {
-    title: this.title,
-    meta: [
-    
-      {
-        property: "article:published_time",
-        content: this.posts.date,
-      },
-      {
-        property: "article:modified_time",
-        content: this.posts.date_gmt,
-      },
-      {
-        property: "article:tag",
-        content: this.posts.tags ? this.posts.tags.toString() : "",
-      },
-      { name: "twitter:label1", content: "Written by" },
-      { name: "twitter:data1", content: "Bob Ross" },
-      { name: "twitter:label2", content: "Filed under" },
-      {
-        name: "twitter:data2",
-        content: this.posts.tags ? this.posts.tags.toString() : "",
-      },
-    ],
-    link: [
-      {
-        hid: "canonical",
-        rel: "canonical",
-        href: `https://bobross.com/articles/${this.$route.params.slug}`,
-      },
-    ],
-  };
-},
-
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://bobross.com/articles/${this.$route.params.slug}`,
+        },
+      ],
+    }
+  },
 
   async mounted() {
     try {
@@ -108,7 +95,6 @@ head() {
         `${'https://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`
       )
       this.categoria = resCategorias.data.name
-      console.log(this.categoria)
     } catch (error) {}
   },
 }
@@ -139,7 +125,6 @@ head() {
 }
 .imagen-caja {
   margin-top: 25px;
-  
 }
 .tarjeta {
   background-color: rgb(255, 255, 255);
