@@ -105,6 +105,11 @@ export default {
               hid: 'twitter:description',
               name: 'twitter:description',
               content: '¿Que Pasa? News .info | Ver Mas  '
+            },
+               {
+                hid: 'twitter:image',
+                name: 'twitter:image',
+                content: this.fetchedData.one_call.featured_list.source_url
             }
           ],
           link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/${this.fetchedData.slug}` }]
