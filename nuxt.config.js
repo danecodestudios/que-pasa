@@ -126,7 +126,13 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        // '@nuxtjs/sitemap',
+        '@nuxtjs/google-analytics'
     ],
+    googleAnalytics: {
+        id: "289382247",
+        dev: false
+    },
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
