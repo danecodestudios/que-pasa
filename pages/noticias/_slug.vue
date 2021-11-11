@@ -239,7 +239,7 @@ export default {
   .titulo {
     font-size: 1.8rem;
     font-weight: 900;
-    text-align: justify;
+    text-align: start;
   }
 
   .tarjeta {
