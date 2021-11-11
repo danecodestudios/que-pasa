@@ -90,7 +90,32 @@ export default {
                 hid: 'twitter:image',
                 name: 'twitter:image',
                 content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+            },
+
+            // Facebook
+            {
+                hid: 'facebook:url',
+                name: 'facebook:url',
+                content: `https://www.quepasanews.info`
+            },
+            {
+                hid: 'facebook:title',
+                name: 'facebook:title',
+                content: '¿Que Pasa News?'
+            },
+            {
+                hid: 'facebook:description',
+                name: 'facebook:description',
+                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+            },
+            {
+                hid: 'facebook:image',
+                name: 'facebook:image',
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
             }
+
+
+
         ],
 
 
