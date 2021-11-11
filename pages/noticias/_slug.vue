@@ -53,7 +53,7 @@ export default {
       `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
-
+    console.log(fetchedData)
     return { fetchedData }
   },
 
@@ -76,7 +76,7 @@ export default {
             { 
               hid: 'og:url', 
               property: 'og:url', 
-              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`
             },
             {
               hid: 'og:title',
@@ -101,7 +101,7 @@ export default {
             { 
               hid: 'twitter:url', 
               name: 'twitter:url', 
-              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
             },
             {
               hid: 'twitter:title',
@@ -123,7 +123,7 @@ export default {
             { 
               hid: 'facebook:url', 
               name: 'facebook:url', 
-              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
             },
             {
               hid: 'facebook:title',
@@ -141,7 +141,7 @@ export default {
                 content: this.fetchedData.one_call.featured_list.source_url
             }
           ],
-          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/${this.fetchedData.slug}` }]
+          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` }]
         }
       }
 

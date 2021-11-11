@@ -4,11 +4,7 @@
       <div class="pa-1">
         <NuxtLink :to="'/destacados/' + slugUno">
           <v-card class="mx-auto card-1">
-            <v-img
-              class="white--text align-end imagen-1"
-             
-              :src="imagenUno"
-            >
+            <v-img class="white--text align-end imagen-1" :src="imagenUno">
               <v-card-title class="tituloUno">{{ tituloUno }}</v-card-title>
             </v-img>
           </v-card>
@@ -58,8 +54,8 @@
   max-width: 500px;
 }
 
-.imagen-1{
-    height: 500px;
+.imagen-1 {
+  height: 500px;
 }
 
 .tituloUno {
@@ -86,7 +82,6 @@
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
-
   .card-1 {
     max-width: 350px;
   }
@@ -100,36 +95,47 @@
     max-width: 350px;
   }
 
-  .imagen-1{
- 
+  .imagen-1 {
     height: 250px;
-}
+  }
 
-.tituloUno {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 1.3rem;
-}
-.tituloDos {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 1.2rem;
-}
+  .tituloUno {
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.795) 80%
+    );
+    font-size: 20px;
+    line-height: 22px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    -webkit-text-size-adjust: 100%;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .tituloDos {
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.795) 80%
+    );
+    font-size: 20px;
+    line-height: 22px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    -webkit-text-size-adjust: 100%;
+    font-weight: 600;
+    line-height: 1.2;
+  }
 
-.tituloTres {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 1.2rem;
-}
-
-
-
+  .tituloTres {
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.795) 80%
+    );
+    font-size: 20px;
+    line-height: 22px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    -webkit-text-size-adjust: 100%;
+    font-weight: 600;
+    line-height: 1.2;
+  }
 }
 </style>
 
@@ -185,7 +191,6 @@ export default {
       this.tituloDos = res.data[1].title.rendered
       this.tituloTres = res.data[2].title.rendered
 
-     
       this.categorias = resCat.data
     } catch (error) {
       err = error
