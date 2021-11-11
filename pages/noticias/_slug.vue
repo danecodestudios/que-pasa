@@ -95,11 +95,7 @@ export default {
                 content: this.fetchedData.one_call.featured_list.source_url
             },
 
-               {
-                
-                property: 'og:img',
-                content: this.fetchedData.one_call.featured_list.source_url
-            },
+             
 
             // Twitter
             { 
@@ -120,6 +116,28 @@ export default {
                {
                 hid: 'twitter:image',
                 name: 'twitter:image',
+                content: this.fetchedData.one_call.featured_list.source_url
+            },
+
+                // Facebook
+            { 
+              hid: 'facebook:url', 
+              name: 'facebook:url', 
+              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'facebook:title',
+              name: 'facebook:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'facebook:description',
+              name: 'facebook:description',
+              content: this.fetchedData.title.rendered
+            },
+               {
+                hid: 'facebook:image',
+                name: 'facebook:image',
                 content: this.fetchedData.one_call.featured_list.source_url
             }
           ],
