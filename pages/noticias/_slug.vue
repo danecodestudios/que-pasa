@@ -95,6 +95,12 @@ export default {
                 content: this.fetchedData.one_call.featured_list.source_url
             },
 
+               {
+                
+                property: 'og:img',
+                content: this.fetchedData.one_call.featured_list.source_url
+            },
+
             // Twitter
             { 
               hid: 'twitter:url', 

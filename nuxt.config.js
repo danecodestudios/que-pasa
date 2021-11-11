@@ -54,11 +54,11 @@ export default {
                 property: 'og:url',
                 content: 'https://www.quepasanews.info/'
             },
-            // {
-            //     hid: 'og:image',
-            //     property: 'og:image',
-            //     content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
-            // },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+            },
 
             // Twitter
             {
