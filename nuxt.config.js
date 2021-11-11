@@ -54,11 +54,11 @@ export default {
                 property: 'og:url',
                 content: 'https://www.quepasanews.info/'
             },
-            {
-                hid: 'og:image',
-                property: 'og:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
-            },
+            // {
+            //     hid: 'og:image',
+            //     property: 'og:image',
+            //     content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+            // },
 
             // Twitter
             {
@@ -119,7 +119,10 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/vuetify
-        '@nuxtjs/vuetify',
+        '@nuxtjs/vuetify', [
+            '@nuxtjs/google-analytics',
+            { id: '289382247' }
+        ]
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -127,11 +130,17 @@ export default {
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         '@nuxtjs/sitemap',
-        '@nuxtjs/google-analytics'
+
     ],
-    googleAnalytics: {
-        id: "289382247",
-        dev: false
+
+
+    sitemap: {
+        hostname: 'https://www.quepasanews.info/',
+        path: '/sitemap.xml',
+        cacheTime: 1000 * 60 * 60 * 2,
+        gzip: true,
+        exclude: ['/404'],
+
     },
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
