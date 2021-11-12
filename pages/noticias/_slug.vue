@@ -139,7 +139,8 @@ export default {
                 hid: 'facebook:image',
                 name: 'facebook:image',
                 content: this.fetchedData.one_call.featured_list.source_url
-            }
+            },
+            
           ],
           link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` }]
         }

@@ -58,7 +58,7 @@ export default {
   },
 
 
-      head () {
+         head () {
         return {
           title: this.fetchedData.title.rendered,
           meta: [
@@ -76,7 +76,7 @@ export default {
             { 
               hid: 'og:url', 
               property: 'og:url', 
-              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`
             },
             {
               hid: 'og:title',
@@ -95,11 +95,13 @@ export default {
                 content: this.fetchedData.one_call.featured_list.source_url
             },
 
+             
+
             // Twitter
             { 
               hid: 'twitter:url', 
               name: 'twitter:url', 
-              content: `https://www.quepasanews.info/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
             },
             {
               hid: 'twitter:title',
@@ -115,9 +117,32 @@ export default {
                 hid: 'twitter:image',
                 name: 'twitter:image',
                 content: this.fetchedData.one_call.featured_list.source_url
-            }
+            },
+
+                // Facebook
+            { 
+              hid: 'facebook:url', 
+              name: 'facebook:url', 
+              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
+            },
+            {
+              hid: 'facebook:title',
+              name: 'facebook:title',
+              content: this.fetchedData.title.rendered
+            },
+            {
+              hid: 'facebook:description',
+              name: 'facebook:description',
+              content: this.fetchedData.title.rendered
+            },
+               {
+                hid: 'facebook:image',
+                name: 'facebook:image',
+                content: this.fetchedData.one_call.featured_list.source_url
+            },
+            
           ],
-          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/${this.fetchedData.slug}` }]
+          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}` }]
         }
       }
 
