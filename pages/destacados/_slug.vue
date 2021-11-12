@@ -76,7 +76,7 @@ export default {
             { 
               hid: 'og:url', 
               property: 'og:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`
+              content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`
             },
             {
               hid: 'og:title',
@@ -101,7 +101,7 @@ export default {
             { 
               hid: 'twitter:url', 
               name: 'twitter:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}` 
             },
             {
               hid: 'twitter:title',
@@ -123,7 +123,7 @@ export default {
             { 
               hid: 'facebook:url', 
               name: 'facebook:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
+              content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}` 
             },
             {
               hid: 'facebook:title',
