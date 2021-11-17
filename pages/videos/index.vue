@@ -1,46 +1,23 @@
 <template>
-  <div>
-    <v-container class="contenedor_videos">
-      <h1>
-        NUESTROS VIDEOS &nbsp;  &nbsp;  &nbsp;  &nbsp; RECUERDA SEGUIRNOS EN 
-        <a
-          style="color: red"
-          href="https://www.youtube.com/channel/UCipRgwMVfuR3KOF8tqd_jpg"
-          target="_blank"
-          >
-          <v-icon style="color: red; font-size: 3rem">mdi-youtube</v-icon>
-          YOUTUBE
-          </a>
-          
-      </h1>
-      <v-row>
-        <v-col
-          class="col-12 col-md-6 col-lg-4 col-xl-3"
-          v-for="video in lista_videos"
-          :key="video.id.videoId"
-        >
-          <iframe
-            class="video_iframe"
-            :src="` ${url}${video.id.videoId} `"
-            title="Videos Que Pasa News"
-            frameborder="0"
-            
-            allowfullscreen
-          ></iframe>
-          <div class="titulo">
-            <h6>{{ video.snippet.title }}</h6>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
+  <div class="contenedor_videos">
+    <Youtube />
   </div>
 </template>
 
+ 
+
 
 <style scoped>
+@import '@/static/css/bootstrap.css';
+
 .contenedor_videos {
-  background-color: #310158;
+  background-image: url(@/static/fondo-video.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 20px;
   border-radius: 5px;
 }
@@ -75,25 +52,11 @@
 </style>
 
 <script>
-import axios from 'axios'
+import Youtube from '@/components/Videos/Youtube.vue'
+
 export default {
-  data() {
-    return {
-      lista_videos: [],
-      url: 'https://www.youtube.com/embed/',
-    }
-  },
-
-  async mounted() {
-    try {
-      const res = await axios.get(
-        'https://www.googleapis.com/youtube/v3/search?key=AIzaSyBI1sCbJ4jvvcA9LAbDmwyWqPAaE2qj8QI&channelId=UCipRgwMVfuR3KOF8tqd_jpg&part=snippet,id&order=date&maxResults=12'
-      )
-
-      this.lista_videos = res.data.items
-    } catch (error) {
-      err = error
-    }
+  components: {
+    Youtube,
   },
 }
 </script>

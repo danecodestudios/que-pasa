@@ -3,6 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
+
+
     head: {
 
         titleTemplate: '%s ',
@@ -130,7 +132,10 @@ export default {
             },
         ],
 
+
     },
+
+
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: ['@/static/css/main.css', '@/static/css/noticias.css'],
@@ -144,11 +149,15 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/vuetify
-        '@nuxtjs/vuetify', [
-            '@nuxtjs/google-analytics',
-            { id: '289382247' }
-        ]
+        '@nuxtjs/vuetify',
+        '@nuxtjs/google-analytics',
+
+
     ],
+
+    googleAnalytics: {
+        id: '289382247'
+    },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -157,6 +166,16 @@ export default {
         '@nuxtjs/sitemap',
 
     ],
+
+    script: [{
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+            'data-ad-client': 'ca-pub-9388034473338767',
+            async: true
+        }
+
+
+    ],
+
 
 
     sitemap: {
