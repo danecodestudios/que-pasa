@@ -19,12 +19,14 @@
               :loading="dialog"
               @click="videoSeleccionado(video.id.videoId, (dialog = true))"
             >
-              <v-dialog
+              <v-card class="card-loader"
+                  >
+                <v-dialog
                 v-model="dialog"
                 hide-overlay
                 persistent
                 width="150"
-                class="dialog"
+                
               >
                 <v-progress-circular
                   indeterminate
@@ -37,6 +39,7 @@
 
                 CARGANDO VIDEO
               </v-dialog>
+              </v-card>
               <v-card class="mx-auto tarjeta-video">
                 <v-img
                   class="white--text align-end"
@@ -52,6 +55,7 @@
               </v-card>
             </a>
             <v-divider class="divisor" inset></v-divider>
+            <br>
           </li>
         </ul>
       </div>
@@ -70,12 +74,10 @@
   height: 500px;
 }
 
-.tarjeta-video {
-  background: transparent;
-}
+
 
 .titulo-video {
-  color: white;
+  color: black;
   font-size: 1rem;
   text-align: initial;
 }
@@ -89,11 +91,13 @@
   list-style: none;
 }
 
-.dialog{
-  background-color: honeydew;
-}
+
 
 .divisor {
+  background: white;
+}
+
+.card-loader{
   background: white;
 }
 

@@ -59,7 +59,7 @@ export default {
             {
                 hid: 'og:image',
                 property: 'og:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico'
             },
 
             // Twitter
@@ -91,7 +91,7 @@ export default {
             {
                 hid: 'twitter:image',
                 name: 'twitter:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico'
             },
 
             // Facebook
@@ -113,7 +113,7 @@ export default {
             {
                 hid: 'facebook:image',
                 name: 'facebook:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1636347274/Logo-Que-Pasa/logo_que_pasa_uz5vwl.jpg'
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico'
             }
 
 
@@ -124,7 +124,7 @@ export default {
 
 
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/que-pasa-logo.jpg' },
+            { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
             {
                 hid: "canonical",
                 rel: "canonical",
