@@ -124,7 +124,7 @@ export default {
 
 
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico' },
             {
                 hid: "canonical",
                 rel: "canonical",
