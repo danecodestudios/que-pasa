@@ -43,15 +43,18 @@
 
     <style scoped>
 .card-1 {
-  max-width: 800px;
+  width: 800px;
+  border-bottom: 2px solid rgb(0, 243, 0);
 }
 .card-2 {
   margin-bottom: 10px;
   max-width: 500px;
+  border-bottom: 2px solid rgb(0, 243, 0);
 }
 
 .card-3 {
   max-width: 500px;
+  border-bottom: 2px solid rgb(0, 243, 0);
 }
 
 .imagen-1 {
@@ -89,7 +92,7 @@
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
   .card-1 {
-    max-width: 350px;
+    width: 350px;
   }
 
   .card-2 {
