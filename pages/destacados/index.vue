@@ -59,26 +59,32 @@
 }
 
 .tituloUno {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 2rem;
+  background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 40px;
+    line-height: 45px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
 }
 .tituloDos {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 1.5rem;
+  background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 25px;
+    line-height: 30px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
 }
 
 .tituloTres {
-  background-image: linear-gradient(
-    transparent 0%,
-    rgba(44, 1, 114, 0.795) 80%
-  );
-  font-size: 1.5rem;
+ background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 25px;
+    line-height: 30px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
@@ -100,41 +106,36 @@
   }
 
   .tituloUno {
-    background-image: linear-gradient(
-      transparent 0%,
-      rgba(44, 1, 114, 0.795) 80%
-    );
-    font-size: 20px;
-    line-height: 22px;
+    background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 25px;
+    line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    -webkit-text-size-adjust: 100%;
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
+    letter-spacing: -0.5px;
   }
   .tituloDos {
-    background-image: linear-gradient(
-      transparent 0%,
-      rgba(44, 1, 114, 0.795) 80%
-    );
-    font-size: 20px;
-    line-height: 22px;
+    background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 25px;
+    line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    -webkit-text-size-adjust: 100%;
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
+    letter-spacing: -0.5px;
   }
 
   .tituloTres {
-    background-image: linear-gradient(
-      transparent 0%,
-      rgba(44, 1, 114, 0.795) 80%
-    );
-    font-size: 20px;
-    line-height: 22px;
+   background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    font-size: 25px;
+    line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    -webkit-text-size-adjust: 100%;
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
+    letter-spacing: -0.5px;
+    
   }
 }
 </style>
