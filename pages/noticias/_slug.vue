@@ -21,7 +21,9 @@
         <div class="col-12 col-md-6">
           <div class="container tarjeta">
             <div class="card-head">
-              <div class="cat">{{ fetchedData.one_call.categories_list[0].name }}</div>
+              <div class="cat">
+                {{ fetchedData.one_call.categories_list[0].name }}
+              </div>
               <h1 class="titulo">{{ fetchedData.title.rendered }}</h1>
             </div>
 
@@ -37,19 +39,24 @@
         </div>
 
         <div class="col-12 col-md-3">
-            <figure class="figure-pauta">
+          <figure class="figure-pauta">
             <img
-             class="img-pauta"
+              class="img-pauta"
               src="@/static/isla-baru.jpg"
               alt="FAMILY TOUR BAQ"
             />
-            <figcaption class="fig-caption_pauta"><marquee behavior="" direction="">FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee></figcaption>
+            <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee
+              >
+            </figcaption>
           </figure>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 // import axios from 'axios'
 // import moment from 'moment'
@@ -66,97 +73,96 @@ export default {
     return { fetchedData }
   },
 
+  head() {
+    return {
+      title: this.fetchedData.title.rendered,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.fetchedData.title.rendered,
+        },
+        // Open Graph
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'posts',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.fetchedData.title.rendered,
+        },
 
-      head () {
-        return {
-          title: this.fetchedData.title.rendered,
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content: this.fetchedData.title.rendered
-            },
-            // Open Graph
-              {
-                hid: 'og:type',
-                property: 'og:type',
-                content: 'posts'
-            },
-            { 
-              hid: 'og:url', 
-              property: 'og:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: this.fetchedData.title.rendered
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content: this.fetchedData.title.rendered
-            },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
 
-             {
-                hid: 'og:image',
-                property: 'og:image',
-                content: this.fetchedData.one_call.featured_list.source_url
-            },
+        // Twitter
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
 
-             
-
-            // Twitter
-            { 
-              hid: 'twitter:url', 
-              name: 'twitter:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
-            },
-            {
-              hid: 'twitter:title',
-              name: 'twitter:title',
-              content: this.fetchedData.title.rendered
-            },
-            {
-              hid: 'twitter:description',
-              name: 'twitter:description',
-              content: this.fetchedData.title.rendered
-            },
-               {
-                hid: 'twitter:image',
-                name: 'twitter:image',
-                content: this.fetchedData.one_call.featured_list.source_url
-            },
-
-                // Facebook
-            { 
-              hid: 'facebook:url', 
-              name: 'facebook:url', 
-              content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` 
-            },
-            {
-              hid: 'facebook:title',
-              name: 'facebook:title',
-              content: this.fetchedData.title.rendered
-            },
-            {
-              hid: 'facebook:description',
-              name: 'facebook:description',
-              content: this.fetchedData.title.rendered
-            },
-               {
-                hid: 'facebook:image',
-                name: 'facebook:image',
-                content: this.fetchedData.one_call.featured_list.source_url
-            },
-            
-          ],
-          link: [{ hid: 'canonical', rel: 'canonical', href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}` }]
-        }
-      }
-
-
-
+        // Facebook
+        {
+          hid: 'facebook:url',
+          name: 'facebook:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'facebook:title',
+          name: 'facebook:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'facebook:description',
+          name: 'facebook:description',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'facebook:image',
+          name: 'facebook:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+      ],
+    }
+  },
 }
 </script>
 
@@ -213,33 +219,31 @@ export default {
 
 /* ========= PAUTAS ================ */
 
-
 .figure-pauta {
-    border: thin 2px #03e403 solid;
-    border-radius: 5px;
-    display: flex;
-    flex-flow: column;
-    padding: 5px;
-    max-width: 100%;
-    margin: auto;
+  border: thin 2px #03e403 solid;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 100%;
+  margin: auto;
 }
 
 .img-pauta {
-    width: 100%;
-    max-height: 350PX;
+  width: 100%;
+  max-height: 350px;
 }
 
 .fig-caption_pauta {
-    background-color: #250167;
-    border-radius: 5px;
-    color: #fff;
-    padding: 1px;
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
+  background-color: #250167;
+  border-radius: 5px;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1rem;
 }
-
 
 /* ================================= */
 
@@ -296,9 +300,9 @@ export default {
     padding: 1px 5px;
   }
 
-    .figure-pauta {
+  .figure-pauta {
     margin-bottom: 10px;
-}
+  }
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {

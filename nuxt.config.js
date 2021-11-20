@@ -123,6 +123,8 @@ export default {
 
 
 
+
+
         link: [
             { rel: 'icon', type: 'image/x-icon', href: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico' },
             {
@@ -131,6 +133,12 @@ export default {
                 href: process.env.BASE_URL,
             },
         ],
+
+        script: [{
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+            'data-ad-client': 'ca-pub-9388034473338767',
+            async: true
+        }]
 
 
     },
