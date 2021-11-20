@@ -24,7 +24,7 @@
               <div class="cat">
                 {{ fetchedData.one_call.categories_list[0].name }}
               </div>
-              <h1 class="titulo">{{ fetchedData.title.rendered }}</h1>
+              <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
             </div>
 
             <hr style="color: black" />
@@ -37,6 +37,8 @@
             </div>
           </div>
         </div>
+
+        
 
         <div class="col-12 col-md-3">
           <figure class="figure-pauta">
@@ -174,7 +176,7 @@ export default {
   padding-right: 0px !important;
 }
 
-.titulo {
+.titulo-h1 {
   display: block;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 50px;
@@ -217,6 +219,11 @@ export default {
   font-weight: 400;
 }
 
+.contenido h2{
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
 
 /* ========= PAUTAS ================ */
 
@@ -235,6 +242,7 @@ export default {
     width: 100%;
     max-height: 350PX;
 }
+
 
 .fig-caption_pauta {
     background-color: #250167;
@@ -272,6 +280,8 @@ export default {
     border-bottom-left-radius: 0px;
     border-bottom: 5px groove #310158;
     width: 100%;
+    margin-top: 5px;
+    image-resolution: from-image 300dpi;
   }
   .cat {
     background-color: #250167;
@@ -285,11 +295,18 @@ export default {
     border-radius: 4px;
   }
 
-  .titulo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-align: justify;
+
+
+  .titulo-h1{
+    font-size: 28px;
+    font-weight: 700;
+    text-align: auto;
+    margin-left: 13px;
   }
+
+  
+
+
 
   .tarjeta {
     background-color: rgb(255, 255, 255);

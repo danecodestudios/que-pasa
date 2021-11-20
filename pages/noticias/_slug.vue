@@ -179,31 +179,36 @@ export default {
   padding-right: 0px !important;
 }
 
-.titulo {
+.titulo-h1 {
+  display: block;
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
+  font-size: 50px;
+  font-weight: 700;
   margin-bottom: 50px;
-  padding-top: 60px;
-  text-align: unset;
+  padding-top: 50px;
+  text-align: inherit;
   width: 100%;
   color: black;
+  word-break: normal;
 }
+
 .imagen-caja {
   margin-top: 25px;
 }
+
 .tarjeta {
   background-color: rgb(255, 255, 255);
   border-radius: 13px;
   position: relative;
   bottom: 70px;
-  box-shadow: -8px 4px 17px 6px rgba(193, 193, 193, 0.082);
+  box-shadow: -8px 4px 17px 6px rgba(0, 0, 0, 0.185);
 }
 
 .img_posts {
   width: 100% !important;
   max-height: 700px;
   border-radius: 2px;
+  image-resolution: from-image 300dpi;
 }
 .cat {
   background-color: #250167;
@@ -217,33 +222,42 @@ export default {
   font-weight: 400;
 }
 
+.contenido h2{
+  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+
 /* ========= PAUTAS ================ */
 
+
 .figure-pauta {
-  border: thin 2px #03e403 solid;
-  border-radius: 5px;
-  display: flex;
-  flex-flow: column;
-  padding: 5px;
-  max-width: 100%;
-  margin: auto;
+    border: thin 2px #03e403 solid;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 100%;
+    margin: auto;
 }
 
 .img-pauta {
-  width: 100%;
-  max-height: 350px;
+    width: 100%;
+    max-height: 350PX;
 }
 
+
 .fig-caption_pauta {
-  background-color: #250167;
-  border-radius: 5px;
-  color: #fff;
-  padding: 1px;
-  text-align: center;
-  font-weight: 700;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 1rem;
+    background-color: #250167;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
 }
+
 
 /* ================================= */
 
@@ -269,6 +283,8 @@ export default {
     border-bottom-left-radius: 0px;
     border-bottom: 5px groove #310158;
     width: 100%;
+    margin-top: 5px;
+    image-resolution: from-image 300dpi;
   }
   .cat {
     background-color: #250167;
@@ -282,11 +298,18 @@ export default {
     border-radius: 4px;
   }
 
-  .titulo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-align: start;
+
+
+  .titulo-h1{
+    font-size: 28px;
+    font-weight: 700;
+    text-align: auto;
+    margin-left: 13px;
   }
+
+  
+
+
 
   .tarjeta {
     background-color: rgb(255, 255, 255);
@@ -302,7 +325,7 @@ export default {
 
   .figure-pauta {
     margin-bottom: 10px;
-  }
+}
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
