@@ -36,7 +36,16 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-3"></div>
+        <div class="col-12 col-md-3">
+            <figure class="figure-pauta">
+            <img
+             class="img-pauta"
+              src="@/static/isla-baru.jpg"
+              alt="FAMILY TOUR BAQ"
+            />
+            <figcaption class="fig-caption_pauta"><marquee behavior="" direction="">FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
@@ -202,6 +211,38 @@ export default {
   font-weight: 400;
 }
 
+/* ========= PAUTAS ================ */
+
+
+.figure-pauta {
+    border: thin 2px #03e403 solid;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.img-pauta {
+    width: 100%;
+    max-height: 350PX;
+}
+
+.fig-caption_pauta {
+    background-color: #250167;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+}
+
+
+/* ================================= */
+
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
   .col-mobile {
@@ -254,6 +295,10 @@ export default {
   .titulo {
     padding: 1px 5px;
   }
+
+    .figure-pauta {
+    margin-bottom: 10px;
+}
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
