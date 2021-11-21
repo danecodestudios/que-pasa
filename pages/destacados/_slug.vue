@@ -290,7 +290,7 @@ export default {
 
    .titulo-h1{
     padding: 20px 10px;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 35px;
   }

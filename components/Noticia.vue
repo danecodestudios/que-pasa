@@ -56,7 +56,8 @@
 .card-body h5 {
   font-family: 'Merriweather Sans', sans-serif;
   text-align: inherit;
-  font-size: 1rem;
+  font-size: 19px;
+  padding: 10px 2px;
 }
 
 .tag {
@@ -100,6 +101,17 @@ a:hover {
 
 .fa-clock {
   color: #040d8a;
+}
+
+@media screen and (min-width: 240px) and (max-width: 575.98px){
+
+  .card-body h5 {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: inherit;
+  font-size: 20px;
+  padding: 20px 2px;
+}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
