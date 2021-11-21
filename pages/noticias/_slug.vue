@@ -24,7 +24,7 @@
               <div class="cat">
                 {{ fetchedData.one_call.categories_list[0].name }}
               </div>
-              <h1 class="titulo">{{ fetchedData.title.rendered }}</h1>
+              <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
             </div>
 
             <hr style="color: black" />
@@ -180,16 +180,11 @@ export default {
 }
 
 .titulo-h1 {
-  display: block;
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  padding-top: 50px;
-  text-align: inherit;
-  width: 100%;
-  color: black;
-  word-break: normal;
+  font-size: 42px;
+  padding: 40px 5px;
+  font-weight: 600;
+ 
 }
 
 .imagen-caja {
@@ -222,10 +217,6 @@ export default {
   font-weight: 400;
 }
 
-.contenido h2{
-  font-size: 20px;
-  font-family: 'Merriweather Sans', sans-serif;
-}
 
 
 /* ========= PAUTAS ================ */
@@ -301,10 +292,10 @@ export default {
 
 
   .titulo-h1{
+    padding: 20px 10px;
     font-size: 28px;
     font-weight: 700;
-    text-align: auto;
-    margin-left: 13px;
+    line-height: 35px;
   }
 
   
