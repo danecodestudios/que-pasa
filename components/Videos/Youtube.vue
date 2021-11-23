@@ -1,6 +1,8 @@
 <template>
   <v-container class="fluid contenedor">
     <v-row>
+
+
       <div class="col-md-8 video">
         <iframe
           class="embed-responsive-item video_iframe"
@@ -12,34 +14,14 @@
       </div>
 
       <div class="col-md-4 lista-videos">
-        <ul>
+        <ul class="ul">
           <li v-for="video of videoList" :key="video">
             <a
               :disabled="dialog"
               :loading="dialog"
-              @click="videoSeleccionado(video.id.videoId, (dialog = true))"
+              @click="videoSeleccionado(video.id.videoId)"
             >
-              <v-card class="card-loader"
-                  >
-                <v-dialog
-                v-model="dialog"
-                hide-overlay
-                persistent
-                width="150"
-                
-              >
-                <v-progress-circular
-                  indeterminate
-                  :rotate="360"
-                  :size="80"
-                  :width="10"
-                  :color="colorDialog"
-                >
-                </v-progress-circular>
-
-                CARGANDO VIDEO
-              </v-dialog>
-              </v-card>
+            
               <v-card class="mx-auto tarjeta-video">
                 <v-img
                   class="white--text align-end"
@@ -54,26 +36,36 @@
                 >
               </v-card>
             </a>
-            <v-divider class="divisor" inset></v-divider>
+            
             <br>
           </li>
         </ul>
       </div>
+
+
     </v-row>
   </v-container>
 </template>
 
+
 <style scoped>
 .contenedor {
+
   height: 550px;
+  padding: 0px;
+  
 }
 
 .video iframe {
   border: 2px solid rgb(2, 223, 2);
   width: 100%;
   height: 500px;
+  position: sticky;
 }
 
+.video{
+  padding: 0px;
+}
 
 
 .titulo-video {
@@ -85,6 +77,7 @@
 .lista-videos {
   height: 510px;
   overflow: auto;
+  padding: 0px;
 }
 
 .lista-videos ul li {
@@ -99,6 +92,10 @@
 
 .card-loader{
   background: white;
+}
+
+.ul{
+  padding: 0px;
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {

@@ -51,6 +51,25 @@
               >
             </figcaption>
           </figure>
+
+          <figure class="figure-pauta">
+            <div >
+              <!-- <script type="text/javascript">
+                  atOptions = {
+                    'key' : 'af3266b8b39aa4e67a6f261e8901df1e',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                  document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></scr' + 'ipt>');
+                </script> -->
+
+                <iframe   key="af3266b8b39aa4e67a6f261e8901df1e" height="250" width="300" params="{}" >
+                  <scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></scr' + 'ipt>
+                </iframe>
+            </div>
+          </figure>
         </div>
       </div>
     </div>
@@ -69,9 +88,15 @@ export default {
       `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
-    console.log(fetchedData)
     return { fetchedData }
   },
+
+
+
+
+
+
+
 
   head() {
     return {
@@ -163,6 +188,10 @@ export default {
       ],
     }
   },
+
+
+
+
 }
 </script>
 
@@ -184,7 +213,6 @@ export default {
   font-size: 42px;
   padding: 40px 5px;
   font-weight: 600;
- 
 }
 
 .imagen-caja {
@@ -217,38 +245,33 @@ export default {
   font-weight: 400;
 }
 
-
-
 /* ========= PAUTAS ================ */
 
-
 .figure-pauta {
-    border: thin 2px #03e403 solid;
-    border-radius: 5px;
-    display: flex;
-    flex-flow: column;
-    padding: 5px;
-    max-width: 100%;
-    margin: auto;
+  border: thin 2px #03e403 solid;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 100%;
+  margin: auto;
 }
 
 .img-pauta {
-    width: 100%;
-    max-height: 350PX;
+  width: 100%;
+  max-height: 350px;
 }
-
 
 .fig-caption_pauta {
-    background-color: #250167;
-    border-radius: 5px;
-    color: #fff;
-    padding: 1px;
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
+  background-color: #250167;
+  border-radius: 5px;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1rem;
 }
-
 
 /* ================================= */
 
@@ -289,18 +312,12 @@ export default {
     border-radius: 4px;
   }
 
-
-
-  .titulo-h1{
+  .titulo-h1 {
     padding: 20px 10px;
     font-size: 28px;
     font-weight: 700;
     line-height: 35px;
   }
-
-  
-
-
 
   .tarjeta {
     background-color: rgb(255, 255, 255);
@@ -316,7 +333,7 @@ export default {
 
   .figure-pauta {
     margin-bottom: 10px;
-}
+  }
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {

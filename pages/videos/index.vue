@@ -18,36 +18,15 @@
   background-size: cover;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding: 20px;
+  width: 100%;
   border-radius: 5px;
 }
 
-.contenedor_videos h1 {
-  color: #00f900;
-  font-size: 1.8rem;
-  padding: 20px;
-}
-
-.titulo {
-  margin-top: 5px;
-}
-
-.titulo h6 {
-  margin-top: 5px;
-  color: white;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.titulo h6:hover {
-  color: #00f900;
-  cursor: pointer;
-}
-
-.video_iframe {
-  width: 100%;
-  height: 230px;
-  border: 2px solid #00f900;
+@media screen and (min-width: 240px) and (max-width: 575.98px){
+  .contenedor_videos{
+    padding: 50px 0px;
+    background-size: contain;
+  }
 }
 </style>
 
