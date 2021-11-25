@@ -65,9 +65,11 @@
                   document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></scr' + 'ipt>');
                 </script> -->
 
-                <iframe   key="af3266b8b39aa4e67a6f261e8901df1e" height="250" width="300" params="{}" >
-                  <scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></scr' + 'ipt>
+                <iframe  key="af3266b8b39aa4e67a6f261e8901df1e" height="250" width="100%"  format = 'iframe'>
+                  <src' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></src' + 'ipt>
                 </iframe>
+            
+                
             </div>
           </figure>
         </div>

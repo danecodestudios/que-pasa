@@ -15,7 +15,7 @@
         <NuxtLink :to="'/destacados/' + slugDos">
           <v-card class="mx-auto card-2">
             <v-img
-              class="white--text align-end"
+              class="white--text align-end imagen-2"
               height="245px"
               :src="imagenDos"
             >
@@ -27,7 +27,7 @@
         <NuxtLink :to="'/destacados/' + slugTres">
           <v-card class="mx-auto card-3">
             <v-img
-              class="white--text align-end"
+              class="white--text align-end imagen-3"
               height="245px"
               :src="imagenTres"
             >
@@ -48,7 +48,7 @@
 }
 .card-2 {
   margin-bottom: 10px;
-  max-width: 500px;
+  width: 500px;
   border-bottom: 2px solid rgb(0, 243, 0);
 }
 
@@ -58,36 +58,55 @@
 }
 
 .imagen-1 {
+  width: 100%;
   height: 500px;
 }
 
+.imagen-2 {
+  width: 100%;
+}
+
+.imagen-3 {
+  width: 100%;
+ 
+}
+
 .tituloUno {
-  background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
-    font-size: 40px;
-    line-height: 45px;
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-weight: 400;
-    text-align: start;
-    word-break: normal;
+  background-image: linear-gradient(
+    transparent 0%,
+    rgba(44, 1, 114, 0.767) 50%
+  );
+  font-size: 40px;
+  line-height: 45px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+  font-weight: 400;
+  text-align: start;
+  word-break: normal;
 }
 .tituloDos {
-  background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
-    font-size: 25px;
-    line-height: 30px;
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-weight: 400;
-    text-align: start;
-    word-break: normal;
+  background-image: linear-gradient(
+    transparent 0%,
+    rgba(44, 1, 114, 0.767) 50%
+  );
+  font-size: 25px;
+  line-height: 30px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+  font-weight: 400;
+  text-align: start;
+  word-break: normal;
 }
 
 .tituloTres {
- background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
-    font-size: 25px;
-    line-height: 30px;
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-weight: 400;
-    text-align: start;
-    word-break: normal;
+  background-image: linear-gradient(
+    transparent 0%,
+    rgba(44, 1, 114, 0.767) 50%
+  );
+  font-size: 25px;
+  line-height: 30px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+  font-weight: 400;
+  text-align: start;
+  word-break: normal;
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
@@ -109,7 +128,10 @@
   }
 
   .tituloUno {
-    background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.767) 50%
+    );
     font-size: 25px;
     line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
@@ -119,7 +141,10 @@
     letter-spacing: -0.5px;
   }
   .tituloDos {
-    background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.767) 50%
+    );
     font-size: 25px;
     line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
@@ -130,7 +155,10 @@
   }
 
   .tituloTres {
-   background-image: linear-gradient(transparent 0%,rgba(44, 1, 114, 0.767) 50% );
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.767) 50%
+    );
     font-size: 25px;
     line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
@@ -138,7 +166,103 @@
     text-align: start;
     word-break: normal;
     letter-spacing: -0.5px;
-    
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1263px) {
+  .card-1 {
+    width: 520px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+  .card-2 {
+    margin-bottom: 10px;
+    width: 350px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+
+  .card-3 {
+    width: 350px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+
+   .imagen-1 {
+     width: 100%;
+    height: 500px;
+  }
+
+  .imagen-2{
+    width: 100%;
+    height: 200px;
+  }
+
+   .imagen-3{
+    width: 100%;
+    height: 200px;
+  }
+
+   .tituloUno {
+    background-image: linear-gradient(
+      transparent 0%,
+      rgba(44, 1, 114, 0.767) 50%
+    );
+    font-size: 25px;
+    line-height: 25px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
+    letter-spacing: -0.5px;
+  }
+  .tituloDos {
+ 
+    font-size: 20px;
+      line-height: 25px;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+    font-weight: 400;
+    text-align: start;
+    word-break: normal;
+    letter-spacing: -0.5px;
+
+  }
+
+  .tituloTres {
+
+    font-size: 20px;
+  
+  }
+}
+
+@media screen and (min-width: 1264px) and (max-width: 1919px) {
+  .card-1 {
+    width: 700px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+  .card-2 {
+    margin-bottom: 10px;
+    width: 400px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+
+  .card-3 {
+    width: 400px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+  .card-1 {
+    width: 800px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+  .card-2 {
+    margin-bottom: 10px;
+    width: 500px;
+    border-bottom: 2px solid rgb(0, 243, 0);
+  }
+
+  .card-3 {
+    width: 500px;
+    border-bottom: 2px solid rgb(0, 243, 0);
   }
 }
 </style>

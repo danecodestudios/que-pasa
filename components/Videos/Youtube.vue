@@ -15,7 +15,7 @@
 
       <div class="col-md-4 lista-videos">
         <ul class="ul">
-          <li v-for="video of videoList" :key="video">
+          <li v-for="video of videoList" :key="video.id.videoId">
             <a
               :disabled="dialog"
               :loading="dialog"

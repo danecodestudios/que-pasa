@@ -7,11 +7,11 @@
         <marquee class="news-movie" behavior="" direction=""
           ><span
             class=""
-            v-for="(post, index) of posts"
-            :key="post.id + '_' + index"
+            v-for="(data, index) of posts"
+            :key="data + '_' + index"
             ><v-icon class="icon-circle">mdi-circle-double</v-icon>
-            <NuxtLink :to="'/noticias/' + post.slug">
-              {{ post.title.rendered }}</NuxtLink
+            <NuxtLink :to="'/noticias/' + data.slug">
+              {{ data.title.rendered }}</NuxtLink
             ></span
           ></marquee
         >
@@ -24,7 +24,7 @@
 
     <v-card>
       <v-tabs background-color="fondo-morado text-white" center-active dark>
-        <v-tab v-for="post in categorias" :key="post">{{ post.name }}</v-tab>
+        <v-tab v-for="cat in categorias" :key="cat">{{ cat.name }}</v-tab>
       </v-tabs>
     </v-card>
 
