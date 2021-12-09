@@ -2,19 +2,56 @@ img {
     width: 100%;
 }
 
+
 .card-body p {
     font-size: 1.2rem;
     font-family: 'Merriweather Sans';
-    font-weight: 500;
-    margin: 0 0 20px 0;
-    letter-spacing: 0.8px;
-    color: black;
+    font-weight: 400;
+    margin: 25px 0px;
+    color: rgb(0, 0, 0);
     text-align: justify;
+    text-justify: distribute;
+    text-align-last: left;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    line-height: 25px;
 }
 
 .card-body p em {
     font-size: 1.1rem;
     font-weight: 400;
+}
+
+.wp-block-pullquote {
+    background: none;
+    margin: 0 0 1em;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.card-body blockquote {
+    border: 0 solid #360258;
+    border-left-width: 4px;
+    color: #686868;
+    font-size: 20px;
+    font-size: 1.1875rem;
+    font-style: italic;
+    line-height: 1.4736842105;
+    margin: 0 0 1.4736842105em;
+    overflow: hidden;
+    padding: 0 0 0 1.263157895em;
+    font-family: 'Merriweather Sans';
+}
+
+.has-drop-cap:first-letter {
+    font-size: 50px;
+    font-weight: 700;
+    color: #360258;
+    text-align: center;
+}
+.has-inline-color {
+    font-weight: 900;
+    text-align: start;
 }
 
 .wp-block-image img {

@@ -45,32 +45,30 @@
               src="@/static/isla-baru.jpg"
               alt="FAMILY TOUR BAQ"
             />
-            <figcaption class="fig-caption_pauta">
+            <!-- <figcaption class="fig-caption_pauta">
               <marquee behavior="" direction=""
                 >FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee
               >
-            </figcaption>
+            </figcaption> -->
           </figure>
 
           <figure class="figure-pauta">
-            <div >
-              <!-- <script type="text/javascript">
-                  atOptions = {
-                    'key' : 'af3266b8b39aa4e67a6f261e8901df1e',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                  };
-                  document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></scr' + 'ipt>');
-                </script> -->
-
-                <iframe  key="af3266b8b39aa4e67a6f261e8901df1e" height="250" width="100%"  format = 'iframe'>
-                  <src' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://pubfruitlesswording.com/af3266b8b39aa4e67a6f261e8901df1e/invoke.js"></src' + 'ipt>
-                </iframe>
-            
-                
-            </div>
+            <img
+              class="img-pauta"
+              src="@/static/impuesto.jpeg"
+              alt="FAMILY TOUR BAQ"
+            />
+            <!-- <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >🔊 ¡Súmate al pago de tus impuestos! • 📆 Hasta el 30 de
+                diciembre obtendrás un 60% de descuento sobre los intereses
+                moratorios, vigencia 2020 y anteriores,  en el pago de: ✅
+                Impuesto Predial Unificado ✅ Industria y Comercio y sus
+                Complementarios ✅Derechos de tránsito y comparendos por
+                infracciones de tránsito impuestos por medios electrónicos y
+                convencionales ✅ Comparendos por violar el Código de Policía.
+              </marquee>
+            </figcaption> -->
           </figure>
         </div>
       </div>
@@ -92,13 +90,6 @@ export default {
     let fetchedData = res[0]
     return { fetchedData }
   },
-
-
-
-
-
-
-
 
   head() {
     return {
@@ -190,10 +181,6 @@ export default {
       ],
     }
   },
-
-
-
-
 }
 </script>
 
@@ -210,12 +197,15 @@ export default {
   padding-right: 0px !important;
 }
 
-.titulo-h1 {
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 42px;
-  padding: 40px 5px;
-  font-weight: 600;
-}
+
+
+ .titulo-h1 {
+   font-family: 'Merriweather Sans', sans-serif;
+    padding: 30px 10px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 45px;
+  }
 
 .imagen-caja {
   margin-top: 25px;
@@ -256,7 +246,7 @@ export default {
   flex-flow: column;
   padding: 5px;
   max-width: 100%;
-  margin: auto;
+  margin-bottom: 10px;
 }
 
 .img-pauta {
