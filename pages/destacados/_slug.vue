@@ -25,6 +25,22 @@
                 {{ fetchedData.one_call.categories_list[0].name }}
               </div>
               <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
+
+                 <div class="autor">
+                <figure class="autor_figure">
+                  <img
+                    class="autor_imagen"
+                    :src="fetchedData.one_call.post_author.avatar_url"
+                    alt=""
+                  />
+                </figure>
+                <div class="autor-titulos_container">
+                  <h6 class="autor_nombre">
+                    {{ fetchedData.one_call.post_author.display_name }}
+                  </h6>
+                  <p class="autor_p">AUTOR</p>
+                </div>
+              </div>
             </div>
 
             <hr style="color: black" />
@@ -40,14 +56,37 @@
 
         
 
-        <div class="col-12 col-md-3">
+         <div class="col-12 col-md-3">
           <figure class="figure-pauta">
             <img
-             class="img-pauta"
+              class="img-pauta"
               src="@/static/isla-baru.jpg"
               alt="FAMILY TOUR BAQ"
             />
-            <figcaption class="fig-caption_pauta"><marquee behavior="" direction="">FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee></figcaption>
+            <!-- <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee
+              >
+            </figcaption> -->
+          </figure>
+
+          <figure class="figure-pauta">
+            <img
+              class="img-pauta"
+              src="@/static/impuesto.jpeg"
+              alt="FAMILY TOUR BAQ"
+            />
+            <!-- <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >🔊 ¡Súmate al pago de tus impuestos! • 📆 Hasta el 30 de
+                diciembre obtendrás un 60% de descuento sobre los intereses
+                moratorios, vigencia 2020 y anteriores,  en el pago de: ✅
+                Impuesto Predial Unificado ✅ Industria y Comercio y sus
+                Complementarios ✅Derechos de tránsito y comparendos por
+                infracciones de tránsito impuestos por medios electrónicos y
+                convencionales ✅ Comparendos por violar el Código de Policía.
+              </marquee>
+            </figcaption> -->
           </figure>
         </div>
       </div>
@@ -171,6 +210,35 @@ export default {
 
 /* ============================= */
 
+.autor {
+  display: flex;
+  margin-left: 5px;
+}
+
+.autor_imagen {
+  border-radius: 100%;
+  border: 3px solid #250167;
+  width: 60px;
+  height: 60px;
+}
+
+.autor-titulos_container{
+  align-content: center;
+  margin-left: 5px;
+  position: relative;
+  top: 10px;
+}
+
+.autor_nombre {
+  font-size: 18px;
+}
+
+.autor_p{
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
+
 .row {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -178,10 +246,10 @@ export default {
 
 .titulo-h1 {
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 42px;
-  padding: 40px 5px;
-  font-weight: 600;
- 
+  padding: 30px 10px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 45px;
 }
 
 .imagen-caja {
@@ -200,7 +268,7 @@ export default {
   width: 100% !important;
   max-height: 700px;
   border-radius: 2px;
-  image-resolution: from-image 300dpi;
+ 
 }
 .cat {
   background-color: #250167;
@@ -214,43 +282,47 @@ export default {
   font-weight: 400;
 }
 
-
-
 /* ========= PAUTAS ================ */
 
-
 .figure-pauta {
-    border: thin 2px #03e403 solid;
-    border-radius: 5px;
-    display: flex;
-    flex-flow: column;
-    padding: 5px;
-    max-width: 100%;
-    margin: auto;
+  border: thin 2px #03e403 solid;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .img-pauta {
-    width: 100%;
-    max-height: 350PX;
+  width: 100%;
+  max-height: 350px;
 }
-
 
 .fig-caption_pauta {
-    background-color: #250167;
-    border-radius: 5px;
-    color: #fff;
-    padding: 1px;
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
+  background-color: #250167;
+  border-radius: 5px;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1rem;
 }
-
 
 /* ================================= */
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
+.autor{
+  margin-left: 15px;
+}
+
+.autor-titulos_container{
+
+  top: 15px;
+}
+
   .col-mobile {
     display: none;
   }
@@ -259,11 +331,18 @@ export default {
     margin: 0;
     padding: 0;
   }
+
   .imagen-caja {
     margin: 0;
     padding: 0;
     width: 100%;
   }
+
+  .img_posts{
+    width: 100%;
+    padding: 0px;
+  }
+
   img {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -274,6 +353,7 @@ export default {
     margin-top: 5px;
     image-resolution: from-image 300dpi;
   }
+
   .cat {
     background-color: #250167;
     text-transform: uppercase;
@@ -286,19 +366,12 @@ export default {
     border-radius: 4px;
   }
 
-
-
-   .titulo-h1{
+  .titulo-h1 {
     padding: 20px 10px;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
   }
-
-
-  
-
-
 
   .tarjeta {
     background-color: rgb(255, 255, 255);
@@ -314,7 +387,7 @@ export default {
 
   .figure-pauta {
     margin-bottom: 10px;
-}
+  }
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
