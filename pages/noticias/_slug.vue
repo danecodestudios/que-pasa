@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="imagen-caja">
-      <v-container>
-        <v-row>
-          <v-col class="md-4 col-mobile"> </v-col>
+      <div class="container">
+        <div class="row">
+          <div class="md-4 col-mobile"> </div>
           <img
             class="img_posts"
             :src="fetchedData.one_call.featured_list.source_url"
             alt=""
           />
-          <v-col class="md-4 col-mobile"> </v-col>
-        </v-row>
-      </v-container>
+          <div class="md-4 col-mobile"> </div>
+        </div>
+      </div>
     </div>
 
     <div class="container">
@@ -266,7 +266,7 @@ export default {
   width: 100% !important;
   max-height: 700px;
   border-radius: 2px;
-  image-resolution: from-image 300dpi;
+ 
 }
 .cat {
   background-color: #250167;
@@ -312,6 +312,10 @@ export default {
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
+.autor{
+  margin-left: 15px;
+}
+
 .autor-titulos_container{
 
   top: 15px;
@@ -325,11 +329,18 @@ export default {
     margin: 0;
     padding: 0;
   }
+
   .imagen-caja {
     margin: 0;
     padding: 0;
     width: 100%;
   }
+
+  .img_posts{
+    width: 100%;
+    padding: 0px;
+  }
+
   img {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -340,6 +351,7 @@ export default {
     margin-top: 5px;
     image-resolution: from-image 300dpi;
   }
+
   .cat {
     background-color: #250167;
     text-transform: uppercase;
