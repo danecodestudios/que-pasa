@@ -25,6 +25,22 @@
                 {{ fetchedData.one_call.categories_list[0].name }}
               </div>
               <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
+
+              <div class="autor">
+                <figure class="autor_figure">
+                  <img
+                    class="autor_imagen"
+                    :src="fetchedData.one_call.post_author.avatar_url"
+                    alt=""
+                  />
+                </figure>
+                <div class="autor-titulos_container">
+                  <h6 class="autor_nombre">
+                    {{ fetchedData.one_call.post_author.display_name }}
+                  </h6>
+                  <p class="autor_p">AUTOR</p>
+                </div>
+              </div>
             </div>
 
             <hr style="color: black" />
@@ -192,20 +208,47 @@ export default {
 
 /* ============================= */
 
+.autor {
+  display: flex;
+  margin-left: 5px;
+}
+
+.autor_imagen {
+  border-radius: 100%;
+  border: 3px solid #250167;
+  width: 60px;
+  height: 60px;
+}
+
+.autor-titulos_container{
+  align-content: center;
+  margin-left: 5px;
+  position: relative;
+  top: 10px;
+}
+
+.autor_nombre {
+  font-size: 18px;
+}
+
+.autor_p{
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
+
 .row {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
 
-
-
- .titulo-h1 {
-   font-family: 'Merriweather Sans', sans-serif;
-    padding: 30px 10px;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 45px;
-  }
+.titulo-h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 30px 10px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 45px;
+}
 
 .imagen-caja {
   margin-top: 25px;
@@ -269,6 +312,11 @@ export default {
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
+.autor-titulos_container{
+
+  top: 15px;
+}
+
   .col-mobile {
     display: none;
   }
