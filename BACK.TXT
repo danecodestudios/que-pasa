@@ -1,0 +1,2 @@
+ :imagen="post.one_call.featured_list.source_url"
+ :categoria="post.one_call.categories_list[0].name"

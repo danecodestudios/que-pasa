@@ -18,15 +18,15 @@
       </v-toolbar>
     </v-container>
 
-    <v-container class="destacados-contain">
+    <!-- <v-container class="destacados-contain">
       <Destacados />
-    </v-container>
+    </v-container> -->
 
-    <v-card>
+    <!-- <v-card>
       <v-tabs background-color="fondo-morado text-white" center-active dark>
         <v-tab v-for="cat in categorias" :key="cat">{{ cat.name }}</v-tab>
       </v-tabs>
-    </v-card>
+    </v-card> -->
 
     <v-container class="noticias-contain_block1">
       <v-row>
@@ -37,9 +37,9 @@
         >
           <Noticias
             :id="post.id"
-            :imagen="post.one_call.featured_list.source_url"
+           
             :titulo="post.title.rendered"
-            :categoria="post.one_call.categories_list[0].name"
+            
             :hyf="moment(post.date).fromNow('es-us')"
             :slug="post.slug"
           />
@@ -158,10 +158,10 @@ export default {
     try {
       // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
       const res = await axios.get(
-        'https://losmaster.xyz/wp-json/wp/v2/posts?per_page=12'
+        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?per_page=12'
       )
       const resCat = await axios.get(
-        'https://losmaster.xyz/wp-json/wp/v2/categories'
+        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/categories'
       )
       this.posts = res.data
       this.categorias = resCat.data

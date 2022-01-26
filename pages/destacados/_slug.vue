@@ -102,103 +102,103 @@ require('moment/locale/es-mx')
 export default {
   async asyncData({ params, $axios }) {
     const res = await $axios.$get(
-      `https://losmaster.xyz/wp-json/wp/v2/destacados?slug=${params.slug}`
+      `https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
 
     return { fetchedData }
   },
 
-  head() {
-    return {
-      title: this.fetchedData.title.rendered,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.fetchedData.title.rendered,
-        },
-        // Open Graph
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'posts',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.fetchedData.title.rendered,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.fetchedData.title.rendered,
-        },
+  // head() {
+  //   return {
+  //     title: this.fetchedData.title.rendered,
+  //     meta: [
+  //       {
+  //         hid: 'description',
+  //         name: 'description',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       // Open Graph
+  //       {
+  //         hid: 'og:type',
+  //         property: 'og:type',
+  //         content: 'posts',
+  //       },
+  //       {
+  //         hid: 'og:url',
+  //         property: 'og:url',
+  //         content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
+  //       },
+  //       {
+  //         hid: 'og:title',
+  //         property: 'og:title',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       {
+  //         hid: 'og:description',
+  //         property: 'og:description',
+  //         content: this.fetchedData.title.rendered,
+  //       },
 
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: this.fetchedData.one_call.featured_list.source_url,
-        },
+  //       {
+  //         hid: 'og:image',
+  //         property: 'og:image',
+  //         content: this.fetchedData.one_call.featured_list.source_url,
+  //       },
 
-        // Twitter
-        {
-          hid: 'twitter:url',
-          name: 'twitter:url',
-          content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.fetchedData.title.rendered,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.fetchedData.title.rendered,
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.fetchedData.one_call.featured_list.source_url,
-        },
+  //       // Twitter
+  //       {
+  //         hid: 'twitter:url',
+  //         name: 'twitter:url',
+  //         content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
+  //       },
+  //       {
+  //         hid: 'twitter:title',
+  //         name: 'twitter:title',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       {
+  //         hid: 'twitter:description',
+  //         name: 'twitter:description',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       {
+  //         hid: 'twitter:image',
+  //         name: 'twitter:image',
+  //         content: this.fetchedData.one_call.featured_list.source_url,
+  //       },
 
-        // Facebook
-        {
-          hid: 'facebook:url',
-          name: 'facebook:url',
-          content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
-        },
-        {
-          hid: 'facebook:title',
-          name: 'facebook:title',
-          content: this.fetchedData.title.rendered,
-        },
-        {
-          hid: 'facebook:description',
-          name: 'facebook:description',
-          content: this.fetchedData.title.rendered,
-        },
-        {
-          hid: 'facebook:image',
-          name: 'facebook:image',
-          content: this.fetchedData.one_call.featured_list.source_url,
-        },
-      ],
-      link: [
-        {
-          hid: 'canonical',
-          rel: 'canonical',
-          href: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
-        },
-      ],
-    }
-  },
+  //       // Facebook
+  //       {
+  //         hid: 'facebook:url',
+  //         name: 'facebook:url',
+  //         content: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
+  //       },
+  //       {
+  //         hid: 'facebook:title',
+  //         name: 'facebook:title',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       {
+  //         hid: 'facebook:description',
+  //         name: 'facebook:description',
+  //         content: this.fetchedData.title.rendered,
+  //       },
+  //       {
+  //         hid: 'facebook:image',
+  //         name: 'facebook:image',
+  //         content: this.fetchedData.one_call.featured_list.source_url,
+  //       },
+  //     ],
+  //     link: [
+  //       {
+  //         hid: 'canonical',
+  //         rel: 'canonical',
+  //         href: `https://www.quepasanews.info/destacados/${this.fetchedData.slug}`,
+  //       },
+  //     ],
+  //   }
+  // },
 }
 </script>
 
