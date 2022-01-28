@@ -67,7 +67,7 @@
   font-weight: 600;
   color: #00F900;
   font-family: 'Inter', sans-serif;
-  /* -webkit-text-stroke: 1px white; */
+  /* -webkit-text-stroke: 1px white;   */
 }
 
 .boton-radio{

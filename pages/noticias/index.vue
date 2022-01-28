@@ -37,7 +37,7 @@
         >
           <Noticias
             :id="post.id"
-            :imagen="post.one_call.featured_list.source_url"
+            :imagen="'https://quepasanews.azurewebsites.net/' + post.one_call.featured_list.source_url"
             :categoria="post.one_call.categories_list[0].name"
             :titulo="post.title.rendered"
             :hyf="moment(post.date).fromNow('es-us')"

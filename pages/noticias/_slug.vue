@@ -67,8 +67,8 @@
               >
             </figcaption> -->
           </figure>
-
-          <!-- <figure class="figure-pauta">
+<!-- 
+          <figure class="figure-pauta">
             <img
               class="img-pauta"
               src="@/static/impuesto.jpeg"
@@ -201,6 +201,203 @@ export default {
 </script>
 
 <style scoped="true" lang="css">
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import '@/static/css/bootstrap.css';
+
+/* ============================= */
+
+.autor {
+  display: flex;
+  margin-left: 5px;
+}
+
+.autor_imagen {
+  border-radius: 100%;
+  border: 3px solid #250167;
+  width: 60px;
+  height: 60px;
+}
+
+.autor-titulos_container{
+  align-content: center;
+  margin-left: 5px;
+  position: relative;
+  top: 10px;
+}
+
+.autor_nombre {
+  font-size: 18px;
+}
+
+.autor_p{
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
+
+.row {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.titulo-h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 30px 10px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.imagen-caja {
+  margin-top: 25px;
+}
+
+.tarjeta {
+  background-color: rgb(255, 255, 255);
+  border-radius: 13px;
+  position: relative;
+  bottom: 70px;
+  box-shadow: -8px 4px 17px 6px rgba(0, 0, 0, 0.185);
+}
+
+.img_posts {
+  width: 100% !important;
+  max-height: 700px;
+  border-radius: 2px;
+ 
+}
+.cat {
+  background-color: #250167;
+  text-transform: uppercase;
+  top: -18px;
+  position: absolute;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 400;
+}
+
+/* ========= PAUTAS ================ */
+
+.figure-pauta {
+  border: thin 2px #03e403 solid;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.img-pauta {
+  width: 100%;
+  max-height: 350px;
+}
+
+.fig-caption_pauta {
+  background-color: #250167;
+  border-radius: 5px;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1rem;
+}
+
+/* ================================= */
+
+/* MEDIDA CELULAR PEQUEÑO (XS)  */
+@media screen and (min-width: 240px) and (max-width: 575.98px) {
+.autor{
+  margin-left: 15px;
+}
+
+.autor-titulos_container{
+
+  top: 15px;
+}
+
+  .col-mobile {
+    display: none;
+  }
+
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .imagen-caja {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .img_posts{
+    width: 100%;
+    padding: 0px;
+  }
+
+  img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom: 5px groove #310158;
+    width: 100%;
+    margin-top: 5px;
+    image-resolution: from-image 300dpi;
+  }
+
+  .cat {
+    background-color: #250167;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    top: -48px;
+    position: absolute;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 4px;
+  }
+
+  .titulo-h1 {
+    padding: 20px 10px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+
+  .tarjeta {
+    background-color: rgb(255, 255, 255);
+    border-radius: 13px;
+    box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
+    position: relative;
+    top: 0;
+  }
+
+  .titulo {
+    padding: 1px 5px;
+  }
+
+  .figure-pauta {
+    margin-bottom: 10px;
+  }
+}
+/* MEDIDA CELULAR  MEDIANO (M Y L)  */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+}
+/* MEDIDA CELULAR  TABLET (S)  */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+}
+</style>
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');

@@ -2,10 +2,6 @@
   <v-container>
     <v-row class="justify-center">
       <div class="pa-1">
-
-        <!-- ||||||||||||||||||||||||||||||||||||||||||||| -->
-
-        
         <NuxtLink :to="'/destacados/' + slugUno">
           <v-card class="mx-auto card-1">
             <v-img class="white--text align-end imagen-1" :src="imagenUno">
@@ -14,10 +10,6 @@
           </v-card>
         </NuxtLink>
       </div>
-
-
-    <!-- ||||||||||||||||||||||||||||| -->
-    
 
       <div class="pa-1">
         <NuxtLink :to="'/destacados/' + slugDos">
@@ -32,8 +24,6 @@
           </v-card>
         </NuxtLink>
 
-<!-- ||||||||||||||||||||||||||||||||||||||||||||||||| -->
-
         <NuxtLink :to="'/destacados/' + slugTres">
           <v-card class="mx-auto card-3">
             <v-img
@@ -45,15 +35,13 @@
             </v-img>
           </v-card>
         </NuxtLink>
-
-<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
       </div>
     </v-row>
   </v-container>
 </template>
 
 
-<style scoped>
+    <style scoped>
 .card-1 {
   width: 800px;
   border-bottom: 2px solid rgb(0, 243, 0);
@@ -312,10 +300,10 @@ export default {
     try {
       // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
       const res = await axios.get(
-        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts'
+        'https://losmaster.xyz/wp-json/wp/v2/destacados'
       )
       const resCat = await axios.get(
-        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/categories'
+        'https://losmaster.xyz/wp-json/wp/v2/categories'
       )
 
       this.slugUno = res.data[0].slug

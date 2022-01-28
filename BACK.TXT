@@ -1,2 +1,392 @@
  :imagen="post.one_call.featured_list.source_url"
  :categoria="post.one_call.categories_list[0].name"
+
+
+
+ index noticias ''''''''''''''''
+ <template>
+  <div>
+    <v-container class="news-movie_contain">
+      <v-toolbar elevation="1" dense flat outlined class="fondo-morado-1">
+        <v-toolbar-title> ULTIMAS NOTICIAS </v-toolbar-title>
+
+        <marquee class="news-movie" behavior="" direction=""
+          ><span
+            class=""
+            v-for="(data, index) of posts"
+            :key="data + '_' + index"
+            ><v-icon class="icon-circle">mdi-circle-double</v-icon>
+            <NuxtLink :to="'/noticias/' + data.slug">
+              {{ data.title.rendered }}</NuxtLink
+            ></span
+          ></marquee
+        >
+      </v-toolbar>
+    </v-container>
+
+    <!-- <v-container class="destacados-contain">
+      <Destacados />
+    </v-container> -->
+
+    <!-- <v-card>
+      <v-tabs background-color="fondo-morado text-white" center-active dark>
+        <v-tab v-for="cat in categorias" :key="cat">{{ cat.name }}</v-tab>
+      </v-tabs>
+    </v-card> -->
+
+    <v-container class="noticias-contain_block1">
+      <v-row>
+        <v-col
+          class="col-12 col-md-6 col-lg-4 col-xl-3"
+          v-for="(post, index) of posts"
+          :key="post.id + '_' + index"
+        >
+          <Noticias
+            :id="post.id"
+            :titulo="post.title.rendered"
+            :imagen="post.one_call.featured_list.source_url"
+            :categoria="post.one_call.categories_list[0].name"
+            :hyf="moment(post.date).fromNow('es-us')"
+            :slug="post.slug"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <Videos />
+  </div>
+</template>
+
+<style scoped>
+/* ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ */
+
+.destacados-contain {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.noticias-contain_block1 {
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* ????????????????????????????? */
+.news-movie span {
+  padding-left: 50px;
+}
+
+.news-movie a {
+  color: white;
+}
+
+.news-movie a:hover {
+  color: rgba(31, 250, 2, 0.87);
+  text-decoration: underline;
+}
+
+.icon-circle {
+  color: #00f900;
+  font-weight: 600;
+  text-align: center;
+}
+
+.v-toolbar__content {
+  align-items: center;
+}
+
+.v-toolbar__title {
+  overflow: unset !important;
+  text-overflow: unset;
+  padding-right: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #00f900;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 240px) and (max-width: 575.98px) {
+  .v-toolbar__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 15px 3px;
+    position: relative;
+    right: 5px;
+  }
+
+  .news-movie_contain {
+    padding: 0px !important ;
+    position: sticky;
+    z-index: inherit;
+    top: -5px;
+  }
+}
+</style>
+
+
+<script>
+import Noticias from '~/components/Noticia.vue'
+import Destacados from '@/pages/destacados/index.vue'
+import Videos from '@/pages/videos/index.vue'
+import axios from 'axios'
+import moment from 'moment'
+require('moment/locale/es-mx')
+
+export default {
+  components: {
+    Noticias,
+    Destacados,
+    Videos,
+  },
+
+  data() {
+    return {
+      posts: [],
+      categorias: [],
+      moment: moment,
+    }
+  },
+
+  async mounted() {
+    try {
+      // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
+      const res = await axios.get(
+        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?per_page=12'
+      )
+      const resCat = await axios.get(
+        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/categories'
+      )
+      this.posts = res.data
+      this.categorias = resCat.data
+    } catch (error) {
+      err = error
+    }
+  },
+}
+</script>
+===========================================================================================
+
+
+==============================================================================================
+SLUG NOTICIAS --------------------------------
+==============================================================================================
+
+<template>
+  <div>
+    <div class="imagen-caja">
+      <div class="container">
+        <div class="row">
+          <div class="md-4 col-mobile"> </div>
+          <img
+            class="img_posts"
+            :src="'https://quepasanews.azurewebsites.net/' + fetchedData.one_call.featured_list.source_url"
+            alt=""
+          />
+          <div class="md-4 col-mobile"> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3"></div>
+
+        <div class="col-12 col-md-6">
+          <div class="container tarjeta">
+            <div class="card-head">
+              <div class="cat">
+                {{ fetchedData.one_call.categories_list[0].name }}
+              </div>
+              <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
+
+              <!-- <div class="autor">
+                <figure class="autor_figure">
+                  <img
+                    class="autor_imagen"
+                    :src="fetchedData.one_call.post_author.avatar_url"
+                    alt=""
+                  />
+                </figure>
+                <div class="autor-titulos_container">
+                  <h6 class="autor_nombre">
+                    {{ fetchedData.one_call.post_author.display_name }}
+                  </h6>
+                  <p class="autor_p">AUTOR</p>
+                </div>
+              </div> -->
+            </div>
+
+            <hr style="color: black" />
+
+            <div class="card-body">
+              <div
+                class="contenido"
+                v-html="fetchedData.content.rendered"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <figure class="figure-pauta">
+            <img
+              class="img-pauta"
+              src="@/static/isla-baru.jpg"
+              alt="FAMILY TOUR BAQ"
+            />
+            <!-- <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee
+              >
+            </figcaption> -->
+          </figure>
+
+          <!-- <figure class="figure-pauta">
+            <img
+              class="img-pauta"
+              src="@/static/impuesto.jpeg"
+              alt="FAMILY TOUR BAQ"
+            />
+            <figcaption class="fig-caption_pauta">
+              <marquee behavior="" direction=""
+                >🔊 ¡Súmate al pago de tus impuestos! • 📆 Hasta el 30 de
+                diciembre obtendrás un 60% de descuento sobre los intereses
+                moratorios, vigencia 2020 y anteriores,  en el pago de: ✅
+                Impuesto Predial Unificado ✅ Industria y Comercio y sus
+                Complementarios ✅Derechos de tránsito y comparendos por
+                infracciones de tránsito impuestos por medios electrónicos y
+                convencionales ✅ Comparendos por violar el Código de Policía.
+              </marquee>
+            </figcaption>
+          </figure> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+// import axios from 'axios'
+// import moment from 'moment'
+
+require('moment/locale/es-mx')
+
+export default {
+  async asyncData({ params, $axios }) {
+    const res = await $axios.$get(
+      `https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?slug=${params.slug}`
+    )
+    let fetchedData = res[0]
+    return { fetchedData }
+  },
+
+  head() {
+    return {
+      title: this.fetchedData.title.rendered,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.fetchedData.title.rendered,
+        },
+        // Open Graph
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'posts',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.fetchedData.title.rendered,
+        },
+
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
+
+        // Twitter
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
+
+        // Facebook
+        {
+          hid: 'facebook:url',
+          name: 'facebook:url',
+          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+        {
+          hid: 'facebook:title',
+          name: 'facebook:title',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'facebook:description',
+          name: 'facebook:description',
+          content: this.fetchedData.title.rendered,
+        },
+        {
+          hid: 'facebook:image',
+          name: 'facebook:image',
+          content: this.fetchedData.one_call.featured_list.source_url,
+        },
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+        },
+      ],
+    }
+  },
+}
+</script>
+
+<style scoped="true" lang="css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
