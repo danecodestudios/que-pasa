@@ -163,7 +163,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.fetchedData.one_call.featured_list.source_url,
+          content: 'https://quepasanews.azurewebsites.net/' + this.fetchedData.one_call.featured_list.source_url,
         },
 
         // Facebook
@@ -185,7 +185,7 @@ export default {
         {
           hid: 'facebook:image',
           name: 'facebook:image',
-          content: this.fetchedData.one_call.featured_list.source_url,
+          content: 'https://quepasanews.azurewebsites.net/' +this.fetchedData.one_call.featured_list.source_url,
         },
       ],
       link: [
