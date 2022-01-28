@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <NuxtLink :to="'/noticias/' + slug">
       <div class="card">
-        <img :src="imagen" class="card-img-top card-imagen" :alt="titulo" />
+        <img :src="'https://quepasanews.azurewebsites.net/' + imagen" class="card-img-top card-imagen" :alt="titulo" />
         <div class="card-body">
           <span class="tag"> {{ categoria }} </span>
           <h5 class="card-title">{{ titulo }}</h5>

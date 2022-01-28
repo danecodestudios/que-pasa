@@ -6,7 +6,7 @@
           <div class="md-4 col-mobile"> </div>
           <img
             class="img_posts"
-            :src="fetchedData.one_call.featured_list.source_url"
+            :src="'https://quepasanews.azurewebsites.net/' + fetchedData.one_call.featured_list.source_url"
             alt=""
           />
           <div class="md-4 col-mobile"> </div>
@@ -26,7 +26,7 @@
               </div>
               <h1 class="titulo-h1">{{ fetchedData.title.rendered }}</h1>
 
-              <div class="autor">
+              <!-- <div class="autor">
                 <figure class="autor_figure">
                   <img
                     class="autor_imagen"
@@ -40,7 +40,7 @@
                   </h6>
                   <p class="autor_p">AUTOR</p>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <hr style="color: black" />
@@ -101,7 +101,7 @@ require('moment/locale/es-mx')
 export default {
   async asyncData({ params, $axios }) {
     const res = await $axios.$get(
-      `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
+      `https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
     return { fetchedData }
