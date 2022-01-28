@@ -68,13 +68,13 @@
             </figcaption> -->
           </figure>
 
-          <figure class="figure-pauta">
+          <!-- <figure class="figure-pauta">
             <img
               class="img-pauta"
               src="@/static/impuesto.jpeg"
               alt="FAMILY TOUR BAQ"
             />
-            <!-- <figcaption class="fig-caption_pauta">
+            <figcaption class="fig-caption_pauta">
               <marquee behavior="" direction=""
                 >🔊 ¡Súmate al pago de tus impuestos! • 📆 Hasta el 30 de
                 diciembre obtendrás un 60% de descuento sobre los intereses
@@ -84,8 +84,8 @@
                 infracciones de tránsito impuestos por medios electrónicos y
                 convencionales ✅ Comparendos por violar el Código de Policía.
               </marquee>
-            </figcaption> -->
-          </figure>
+            </figcaption>
+          </figure> -->
         </div>
       </div>
     </div>
