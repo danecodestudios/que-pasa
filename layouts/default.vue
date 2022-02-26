@@ -5,15 +5,15 @@
       fixed
       app
       class=" fondo-morado-1"
-      height="70px"
+      height="80px"
     >
       <div>
         <Logo />
       </div>
       <v-spacer />
 
-      <div class="radio">
-        <v-divider class="mx-4 light-green accent-4" vertical></v-divider>
+      <div class="radio"  >
+        <v-divider class="mx-4  " vertical style="background-color:#d1069e;"></v-divider>
         <h6 class=" titulo-emisora">{{ titleEmisora }}</h6>
         <v-btn
           class="p-3 ml-4 boton-radio"
@@ -27,9 +27,9 @@
     </v-app-bar>
 
     <v-main>
- 
+
         <Nuxt />
-     
+
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -42,8 +42,8 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer class="fondo-morado-2  " style="color:white; " :absolute="!fixed" app>
-      <span>&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} QUE PASA NEWS || COLOMBIA </span>
+    <v-footer class="footer  " style="color:white; " :absolute="!fixed" app>
+      <span>&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} LA ESQUINA RADIO || DONDE TODO PASA</span>
     </v-footer>
   </v-app>
 </template>
@@ -59,19 +59,28 @@
   z-index: 20;
   top: 0;
   padding: 5px;
+
 }
 
 .titulo-emisora {
-  color: #310158;
+  color: white;
   font-size: 2rem;
   font-weight: 600;
-  color: #00F900;
+
+
   font-family: 'Inter', sans-serif;
   /* -webkit-text-stroke: 1px white;   */
 }
 
 .boton-radio{
-  background-color:#310158;
+  background-color:#d1069e;
+  padding: 5px;
+
+}
+
+.footer{
+  background-color: black;
+  border-top: 3px solid #d1069e;
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px){
@@ -85,15 +94,17 @@
 }
 
 .titulo-emisora {
-  color: #00F900;
+  color: #d1069e;
   font-size: .8rem;
   font-weight: 600;
   -webkit-text-stroke: 0px;
 }
 
 .boton-radio{
-  background-color:#00F900 ;
+  background-color:black ;
+
 }
+
 }
 </style>
 
@@ -122,7 +133,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js',
-      titleEmisora: 'QUE PASA RADIO',
+      titleEmisora: 'LA ESQUINA RADIO',
     }
   },
 

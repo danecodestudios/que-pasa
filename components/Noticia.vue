@@ -61,8 +61,8 @@
 }
 
 .tag {
-  background-color: #310158;
-  color: #1eff00;
+  background-color: #000000;
+  color: #d1069e;
   border-radius: 5px;
   font-size: 14px;
   margin: 0;
@@ -75,7 +75,7 @@
 }
 
 .card-footer {
-  background-color: #360258;
+  background-color: #000000;
 }
 
 a {

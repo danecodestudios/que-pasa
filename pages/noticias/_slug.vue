@@ -3,13 +3,16 @@
     <div class="imagen-caja">
       <div class="container">
         <div class="row">
-          <div class="md-4 col-mobile"> </div>
+          <div class="md-4 col-mobile"></div>
           <img
             class="img_posts"
-            :src="'https://quepasanews.azurewebsites.net/' + fetchedData.one_call.featured_list.source_url"
+            :src="
+              'https://quepasanews.azurewebsites.net/' +
+              fetchedData.one_call.featured_list.source_url
+            "
             alt=""
           />
-          <div class="md-4 col-mobile"> </div>
+          <div class="md-4 col-mobile"></div>
         </div>
       </div>
     </div>
@@ -67,7 +70,7 @@
               >
             </figcaption> -->
           </figure>
-<!-- 
+          <!--
           <figure class="figure-pauta">
             <img
               class="img-pauta"
@@ -163,7 +166,9 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: 'https://quepasanews.azurewebsites.net/' + this.fetchedData.one_call.featured_list.source_url,
+          content:
+            'https://quepasanews.azurewebsites.net/' +
+            this.fetchedData.one_call.featured_list.source_url,
         },
 
         // Facebook
@@ -185,7 +190,9 @@ export default {
         {
           hid: 'facebook:image',
           name: 'facebook:image',
-          content: 'https://quepasanews.azurewebsites.net/' +this.fetchedData.one_call.featured_list.source_url,
+          content:
+            'https://quepasanews.azurewebsites.net/' +
+            this.fetchedData.one_call.featured_list.source_url,
         },
       ],
       link: [
@@ -220,7 +227,7 @@ export default {
   height: 60px;
 }
 
-.autor-titulos_container{
+.autor-titulos_container {
   align-content: center;
   margin-left: 5px;
   position: relative;
@@ -231,7 +238,7 @@ export default {
   font-size: 18px;
 }
 
-.autor_p{
+.autor_p {
   font-size: 12px;
   position: relative;
   top: -8px;
@@ -266,14 +273,13 @@ export default {
   width: 100% !important;
   max-height: 700px;
   border-radius: 2px;
- 
 }
 .cat {
-  background-color: #250167;
+  background-color: #000000;
   text-transform: uppercase;
   top: -18px;
   position: absolute;
-  color: white;
+  color: #d1069e;
   padding: 5px 20px;
   border-radius: 5px;
   font-family: 'Merriweather Sans', sans-serif;
@@ -283,7 +289,7 @@ export default {
 /* ========= PAUTAS ================ */
 
 .figure-pauta {
-  border: thin 2px #03e403 solid;
+  border: thin 2px #d1069e solid;
   border-radius: 5px;
   display: flex;
   flex-flow: column;
@@ -312,14 +318,13 @@ export default {
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
-.autor{
-  margin-left: 15px;
-}
+  .autor {
+    margin-left: 15px;
+  }
 
-.autor-titulos_container{
-
-  top: 15px;
-}
+  .autor-titulos_container {
+    top: 15px;
+  }
 
   .col-mobile {
     display: none;
@@ -336,7 +341,7 @@ export default {
     width: 100%;
   }
 
-  .img_posts{
+  .img_posts {
     width: 100%;
     padding: 0px;
   }
@@ -353,7 +358,7 @@ export default {
   }
 
   .cat {
-    background-color: #250167;
+    background-color: #eb03e3;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 600;
@@ -463,7 +468,7 @@ export default {
   width: 100% !important;
   max-height: 700px;
   border-radius: 2px;
- 
+
 }
 .cat {
   background-color: #250167;

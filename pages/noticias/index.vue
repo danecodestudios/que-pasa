@@ -37,7 +37,10 @@
         >
           <Noticias
             :id="post.id"
-            :imagen="'https://quepasanews.azurewebsites.net/' + post.one_call.featured_list.source_url"
+            :imagen="
+              'https://quepasanews.azurewebsites.net/' +
+              post.one_call.featured_list.source_url
+            "
             :categoria="post.one_call.categories_list[0].name"
             :titulo="post.title.rendered"
             :hyf="moment(post.date).fromNow('es-us')"
@@ -47,7 +50,7 @@
       </v-row>
     </v-container>
 
-    <Videos />
+    <!-- <Videos /> -->
   </div>
 </template>
 
@@ -59,10 +62,9 @@
   margin-top: 30px;
 }
 
-.noticias-contain_block1{
+.noticias-contain_block1 {
   margin: auto;
   margin-top: 20px;
-
 }
 
 /* ????????????????????????????? */
@@ -95,9 +97,10 @@
   padding-right: 5px;
   font-size: 1rem;
   font-weight: 600;
-  color: white;
-  background-color: #00f900;
+  color: #ffffff;
+  background-color: #000000;
   padding: 15px;
+  border: solid #d1069e 2px;
   border-radius: 5px;
 }
 
@@ -123,7 +126,7 @@
 <script>
 import Noticias from '~/components/Noticia.vue'
 import Destacados from '@/pages/destacados/index.vue'
-import Videos from '@/pages/videos/index.vue'
+// import Videos from '@/pages/videos/index.vue'
 import axios from 'axios'
 import moment from 'moment'
 require('moment/locale/es-mx')
@@ -132,7 +135,6 @@ export default {
   components: {
     Noticias,
     Destacados,
-    Videos,
   },
 
   data() {

@@ -27,7 +27,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo '
+                content: 'La Esquina Radio Barranquilla, Colombia, Y el Mundo '
             },
 
             // Open Graph
@@ -49,17 +49,17 @@ export default {
             {
                 hid: 'og:description',
                 property: 'og:description',
-                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+                content: 'La Esquina Radio Donde Todo Pasa, Colombia, Y el Mundo'
             },
             {
                 hid: 'og:url',
                 property: 'og:url',
-                content: 'https://www.quepasanews.info/'
+                content: 'https://laesquinaradio.co/'
             },
             {
                 hid: 'og:image',
                 property: 'og:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico'
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645307340/logos-la-esquina-radio/LA_ESQUINA_EMISORA_LOGO_EDITABLE_BLANCO_1_iqg2ki.svg'
             },
 
             // Twitter
@@ -71,22 +71,22 @@ export default {
             {
                 hid: 'twitter:site',
                 name: 'twitter:site',
-                content: '@quepasanews'
+                content: '@laesquinaradio'
             },
             {
                 hid: 'twitter:url',
                 name: 'twitter:url',
-                content: 'https://www.quepasanews.info/'
+                content: 'https://laesquinaradio.co/'
             },
             {
                 hid: 'twitter:title',
                 name: 'twitter:title',
-                content: 'Que Pasa News | Plataforma Oficial'
+                content: 'La Esquina Radio | Plataforma Oficial'
             },
             {
                 hid: 'twitter:description',
                 name: 'twitter:description',
-                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+                content: 'La Esquina Radio Donde Todo Pasa, Colombia, Y el Mundo'
             },
             {
                 hid: 'twitter:image',
@@ -98,22 +98,22 @@ export default {
             {
                 hid: 'facebook:url',
                 name: 'facebook:url',
-                content: `https://www.quepasanews.info`
+                content: `https://laesquinaradio.co/`
             },
             {
                 hid: 'facebook:title',
                 name: 'facebook:title',
-                content: '¿Que Pasa News?'
+                content: 'La Esquina Radio - Donde Todo Pas'
             },
             {
                 hid: 'facebook:description',
                 name: 'facebook:description',
-                content: 'Que Pasa News Barranquilla, Colombia, Y el Mundo'
+                content: 'La Esquina Radio Donde Todo Pasa, Colombia, Y el Mundo'
             },
             {
                 hid: 'facebook:image',
                 name: 'facebook:image',
-                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico'
+                content: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645307340/logos-la-esquina-radio/LA_ESQUINA_EMISORA_LOGO_EDITABLE_BLANCO_1_iqg2ki.svg'
             }
 
 
@@ -126,7 +126,7 @@ export default {
 
 
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1637159233/Logo-Que-Pasa/QUE_PASA_1_-modified_mciyot.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645307340/logos-la-esquina-radio/LA_ESQUINA_EMISORA_LOGO_EDITABLE_BLANCO_1_iqg2ki.svg' },
             {
                 hid: "canonical",
                 rel: "canonical",
