@@ -94,7 +94,7 @@
 }
 
 .titulo-emisora {
-  color: #d1069e;
+  color: white;
   font-size: .8rem;
   font-weight: 600;
   -webkit-text-stroke: 0px;
@@ -133,7 +133,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js',
-      titleEmisora: 'LA ESQUINA RADIO',
+      titleEmisora: 'EN VIVO ',
     }
   },
 

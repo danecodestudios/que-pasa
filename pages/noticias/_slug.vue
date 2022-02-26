@@ -222,7 +222,7 @@ export default {
 
 .autor_imagen {
   border-radius: 100%;
-  border: 3px solid #250167;
+  border: 3px solid #d1069e;
   width: 60px;
   height: 60px;
 }
@@ -304,7 +304,7 @@ export default {
 }
 
 .fig-caption_pauta {
-  background-color: #250167;
+  background-color: #d1069e;
   border-radius: 5px;
   color: #fff;
   padding: 1px;
@@ -351,14 +351,14 @@ export default {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-bottom: 5px groove #310158;
+    border-bottom: 5px groove black;
     width: 100%;
     margin-top: 5px;
     image-resolution: from-image 300dpi;
   }
 
   .cat {
-    background-color: #eb03e3;
+    background-color: black;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 600;
