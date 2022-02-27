@@ -8,7 +8,7 @@ export default {
     head: {
 
         titleTemplate: '%s ',
-        title: '¿Que Pasa News?',
+        title: 'La Esquina Radio',
         htmlAttrs: {
             lang: 'es-co',
         },
@@ -39,12 +39,12 @@ export default {
             {
                 hid: 'og:site_name',
                 property: 'og:site_name',
-                content: 'Que Pasa News  '
+                content: 'La Esquina Radio | Donde Todo Pasa '
             },
             {
                 hid: 'og:title',
                 property: 'og:title',
-                content: '¿Que Pasa? News'
+                content: 'La Esquina Radio | Donde Todo Pasa'
             },
             {
                 hid: 'og:description',
