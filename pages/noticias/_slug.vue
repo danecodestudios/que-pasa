@@ -127,7 +127,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+          content: `https://www.laesquinaradio.co/noticias/${this.fetchedData.slug}`,
         },
         {
           hid: 'og:title',
@@ -150,7 +150,7 @@ export default {
         {
           hid: 'twitter:url',
           name: 'twitter:url',
-          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+          content: `https://www.laesquinaradio.co/noticias/${this.fetchedData.slug}`,
         },
         {
           hid: 'twitter:title',
@@ -166,7 +166,7 @@ export default {
           hid: 'twitter:image',
           name: 'twitter:image',
           content:
-            'https://quepasanews.azurewebsites.net/' +
+            'https://www.laesquinaradio.co/' +
             this.fetchedData.one_call.featured_list.source_url,
         },
 
@@ -174,7 +174,7 @@ export default {
         {
           hid: 'facebook:url',
           name: 'facebook:url',
-          content: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+          content: `https://www.laesquinaradio.co/noticias/${this.fetchedData.slug}`,
         },
         {
           hid: 'facebook:title',
@@ -190,7 +190,7 @@ export default {
           hid: 'facebook:image',
           name: 'facebook:image',
           content:
-            'https://quepasanews.azurewebsites.net/' +
+            'https://www.laesquinaradio.co/' +
             this.fetchedData.one_call.featured_list.source_url,
         },
       ],
@@ -198,7 +198,7 @@ export default {
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: `https://www.quepasanews.info/noticias/${this.fetchedData.slug}`,
+          href: `https://www.laesquinaradio.co/noticias/${this.fetchedData.slug}`,
         },
       ],
     }

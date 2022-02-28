@@ -162,7 +162,7 @@ export default {
       posts: [],
       categorias: [],
       moment: moment,
-      intervalo: 6000,
+      intervalo: 3000,
                items: [
           {
             src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994532/logos-la-esquina-radio/barner-hys/Banner-hys-01_tf3zas.jpg',
