@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container class="news-movie_contain">
+
       <v-toolbar elevation="1" dense flat outlined class="fondo-morado-1">
         <v-toolbar-title> ULTIMAS NOTICIAS </v-toolbar-title>
 
@@ -16,6 +16,29 @@
           ></marquee
         >
       </v-toolbar>
+
+
+    <v-container>
+      <v-carousel
+
+        hide-delimiter-background
+        show-arrows-on-hover
+        :height="height"
+        cycle
+        :interval="intervalo"
+        :show-arrows="false"
+         hide-delimiters
+      >
+        <v-carousel-item
+          v-for="(item, i) in items"
+          :key="i"
+          :src="item.src"
+         class="w-100"
+      reverse-transition="fade-transition"
+      transition="fade-transition"
+        >
+        </v-carousel-item>
+      </v-carousel>
     </v-container>
 
     <!-- <v-container class="destacados-contain">
@@ -37,10 +60,7 @@
         >
           <Noticias
             :id="post.id"
-            :imagen="
-              'https://quepasanews.azurewebsites.net/' +
-              post.one_call.featured_list.source_url
-            "
+            :imagen="post.one_call.featured_list.source_url"
             :categoria="post.one_call.categories_list[0].name"
             :titulo="post.title.rendered"
             :hyf="moment(post.date).fromNow('es-us')"
@@ -142,6 +162,39 @@ export default {
       posts: [],
       categorias: [],
       moment: moment,
+      intervalo: 6000,
+               items: [
+          {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994532/logos-la-esquina-radio/barner-hys/Banner-hys-01_tf3zas.jpg',
+          },
+          {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994530/logos-la-esquina-radio/barner-hys/Banner-hys-02_v3jv5o.jpg',
+          },
+          {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994530/logos-la-esquina-radio/barner-hys/Banner-hys-03_kpfikv.jpg',
+          },
+          {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994531/logos-la-esquina-radio/barner-hys/Banner-hys-04_eojrek.jpg',
+          },
+           {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994530/logos-la-esquina-radio/barner-hys/Banner-hys-05_k2qgn9.jpg',
+          },
+           {
+            src: 'https://res.cloudinary.com/danecod-s-a-s/image/upload/v1645994530/logos-la-esquina-radio/barner-hys/Banner-hys-06_xd8rli.jpg',
+          },
+        ],
+    }
+  },
+
+      computed:{
+        height () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 50
+          case 'sm': return 90
+          case 'md': return 110
+          case 'lg': return 145
+          case 'xl': return 210
+        }
     }
   },
 
@@ -149,10 +202,10 @@ export default {
     try {
       // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
       const res = await axios.get(
-        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?per_page=12'
+        'https://losmaster.xyz/wp-json/wp/v2/posts?per_page=12'
       )
       const resCat = await axios.get(
-        'https://quepasanews.azurewebsites.net/wp-json/wp/v2/categories'
+        'https://losmaster.xyz/wp-json/wp/v2/categories'
       )
       this.posts = res.data
       this.categorias = resCat.data

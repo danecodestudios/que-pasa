@@ -4,7 +4,7 @@
       :clipped-left="clipped"
       fixed
       app
-      class=" fondo-morado-1"
+      class="fondo-morado-1"
       height="80px"
     >
       <div>
@@ -12,24 +12,28 @@
       </div>
       <v-spacer />
 
-      <div class="radio"  >
-        <v-divider class="mx-4  " vertical style="background-color:#d1069e;"></v-divider>
-        <h6 class=" titulo-emisora">{{ titleEmisora }}</h6>
-        <v-btn
-          class="p-3 ml-4 boton-radio"
-          icon
-          @click.stop="sonido()"
-        >
-          <v-icon v-if="!pausa" class="p-4 " style="color:white;" size="45" >mdi-play-speed</v-icon>
-          <v-icon v-if="pausa" class="p-4"  style="color:white;" size="45">mdi-motion-pause-outline</v-icon>
+      <div class="radio">
+        <v-divider
+          class="mx-4"
+          vertical
+          style="background-color: #d1069e"
+        ></v-divider>
+        <h6 class="titulo-emisora">{{ titleEmisora }}</h6>
+        <v-btn class="p-3 ml-4 boton-radio" icon @click.stop="sonido()">
+          <v-icon v-if="!pausa" class="p-4" style="color: white" size="45"
+            >mdi-play-speed</v-icon
+          >
+          <v-icon v-if="pausa" class="p-4" style="color: white" size="45"
+            >mdi-motion-pause-outline</v-icon
+          >
         </v-btn>
       </div>
     </v-app-bar>
 
+
+
     <v-main>
-
-        <Nuxt />
-
+      <Nuxt />
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -42,15 +46,17 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer class="footer  " style="color:white; " :absolute="!fixed" app>
-      <span>&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} LA ESQUINA RADIO || DONDE TODO PASA</span>
+    <v-footer class="footer" style="color: white" :absolute="!fixed" app>
+      <span
+        >&copy; TODOS LOS DERECHOS RESERVADOS {{ new Date().getFullYear() }} LA
+        ESQUINA RADIO || DONDE TODO PASA</span
+      >
     </v-footer>
   </v-app>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 
 .radio {
   display: flex;
@@ -59,7 +65,6 @@
   z-index: 20;
   top: 0;
   padding: 5px;
-
 }
 
 .titulo-emisora {
@@ -67,44 +72,40 @@
   font-size: 2rem;
   font-weight: 600;
 
-
   font-family: 'Inter', sans-serif;
   /* -webkit-text-stroke: 1px white;   */
 }
 
-.boton-radio{
-  background-color:#d1069e;
+.boton-radio {
+  background-color: #d1069e;
   padding: 5px;
-
 }
 
-.footer{
+.footer {
   background-color: black;
   border-top: 3px solid #d1069e;
 }
 
-@media screen and (min-width: 240px) and (max-width: 575.98px){
+@media screen and (min-width: 240px) and (max-width: 575.98px) {
   .radio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-  top: 0;
-  padding: 5px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    top: 0;
+    padding: 5px;
+  }
 
-.titulo-emisora {
-  color: white;
-  font-size: .8rem;
-  font-weight: 600;
-  -webkit-text-stroke: 0px;
-}
+  .titulo-emisora {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    -webkit-text-stroke: 0px;
+  }
 
-.boton-radio{
-  background-color:black ;
-
-}
-
+  .boton-radio {
+    background-color: black;
+  }
 }
 </style>
 
@@ -134,13 +135,17 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js',
       titleEmisora: 'EN VIVO ',
+
+
+
+
     }
   },
 
-    mounted() {
+  mounted() {
     this.$store.commit('initializeSound')
   },
-    methods: {
+  methods: {
     sonido() {
       if (this.pausa == false || this.isSoundEnabled) {
         this.audio = new Audio('http://stream.zeno.fm/5m7yn6bxe48uv')

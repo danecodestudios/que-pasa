@@ -7,7 +7,6 @@
           <img
             class="img_posts"
             :src="
-              'https://quepasanews.azurewebsites.net/' +
               fetchedData.one_call.featured_list.source_url
             "
             alt=""
@@ -104,7 +103,7 @@ require('moment/locale/es-mx')
 export default {
   async asyncData({ params, $axios }) {
     const res = await $axios.$get(
-      `https://quepasanews.azurewebsites.net/wp-json/wp/v2/posts?slug=${params.slug}`
+      `https://losmaster.xyz/wp-json/wp/v2/posts?slug=${params.slug}`
     )
     let fetchedData = res[0]
     return { fetchedData }
