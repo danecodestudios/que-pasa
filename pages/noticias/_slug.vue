@@ -58,11 +58,9 @@
 
         <div class="col-12 col-md-3">
           <figure class="figure-pauta">
-            <img
-              class="img-pauta"
-              src="@/static/isla-baru.jpg"
-              alt="FAMILY TOUR BAQ"
-            />
+
+
+            <video class="img-pauta" src="@/static/pauta.mp4" controls></video>
             <!-- <figcaption class="fig-caption_pauta">
               <marquee behavior="" direction=""
                 >FAMILY TOUR BAQ - PASADIAS ISLA BARU TODO INCLUIDO</marquee

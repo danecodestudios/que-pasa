@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-row class="justify-center">
+  <div class="container-fluid">
+ <v-row class="justify-center">
       <div class="pa-1">
         <NuxtLink :to="'/destacados/' + slugUno">
           <v-card class="mx-auto card-1">
@@ -37,24 +37,27 @@
         </NuxtLink>
       </div>
     </v-row>
-  </v-container>
+
+  </div>
+
+
 </template>
 
 
     <style scoped>
 .card-1 {
   width: 800px;
-  border-bottom: 2px solid rgb(0, 243, 0);
+
 }
 .card-2 {
   margin-bottom: 10px;
   width: 500px;
-  border-bottom: 2px solid rgb(0, 243, 0);
+
 }
 
 .card-3 {
   max-width: 500px;
-  border-bottom: 2px solid rgb(0, 243, 0);
+
 }
 
 .imagen-1 {
@@ -68,13 +71,13 @@
 
 .imagen-3 {
   width: 100%;
- 
+
 }
 
 .tituloUno {
   background-image: linear-gradient(
     transparent 0%,
-    rgba(44, 1, 114, 0.767) 50%
+    rgba(0, 0, 0, 0.767) 50%
   );
   font-size: 40px;
   line-height: 45px;
@@ -86,7 +89,7 @@
 .tituloDos {
   background-image: linear-gradient(
     transparent 0%,
-    rgba(44, 1, 114, 0.767) 50%
+    rgba(0, 0, 0, 0.767) 50%
   );
   font-size: 25px;
   line-height: 30px;
@@ -99,7 +102,7 @@
 .tituloTres {
   background-image: linear-gradient(
     transparent 0%,
-    rgba(44, 1, 114, 0.767) 50%
+    rgba(0, 0, 0, 0.767) 50%
   );
   font-size: 25px;
   line-height: 30px;
@@ -130,7 +133,7 @@
   .tituloUno {
     background-image: linear-gradient(
       transparent 0%,
-      rgba(44, 1, 114, 0.767) 50%
+      rgba(0, 0, 0, 0.767) 50%
     );
     font-size: 25px;
     line-height: 25px;
@@ -143,7 +146,7 @@
   .tituloDos {
     background-image: linear-gradient(
       transparent 0%,
-      rgba(44, 1, 114, 0.767) 50%
+      rgba(0, 0, 0, 0.767) 50%
     );
     font-size: 25px;
     line-height: 25px;
@@ -157,7 +160,7 @@
   .tituloTres {
     background-image: linear-gradient(
       transparent 0%,
-      rgba(44, 1, 114, 0.767) 50%
+      rgba(0, 0, 0, 0.767) 50%
     );
     font-size: 25px;
     line-height: 25px;
@@ -214,7 +217,7 @@
     letter-spacing: -0.5px;
   }
   .tituloDos {
- 
+
     font-size: 20px;
       line-height: 25px;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
@@ -228,7 +231,7 @@
   .tituloTres {
 
     font-size: 20px;
-  
+
   }
 }
 
@@ -300,8 +303,9 @@ export default {
     try {
       // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
       const res = await axios.get(
-        'https://losmaster.xyz/wp-json/wp/v2/destacados'
+        'https://losmaster.xyz/wp-json/wp/v2/posts?per_page=3'
       )
+
       const resCat = await axios.get(
         'https://losmaster.xyz/wp-json/wp/v2/categories'
       )

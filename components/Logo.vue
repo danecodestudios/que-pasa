@@ -11,12 +11,14 @@
 <style>
 .LogoQuePasa {
 
-  height: 110px;
+  height: 170px;
+  margin: 10px;
+  padding: 10px;
 }
 
 @media screen and (min-width: 240px) and (max-width: 575.98px){
   .LogoQuePasa {
-  height: 120px;
+  height: 140px;
 }
 }
 

@@ -5,8 +5,9 @@
       fixed
       app
       class="fondo-morado-1"
-      height="80px"
+      height="100px"
     >
+         <v-spacer />
       <div>
         <Logo />
       </div>

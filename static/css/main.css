@@ -12,7 +12,7 @@ a {
 .fondo-morado-1 {
     background-color: #000000 !important;
     border-color: rgb(255, 47, 231)!important;
-    border-bottom: 4px solid rgb(255, 47, 231);
+    border-bottom: 1px solid rgb(255, 47, 231);
 }
 
 .fondo-morado-2 {
